@@ -1,5 +1,5 @@
 title: John He
-# logo:
-# description:
+logo: /assets/img/logo.jpg
+description: Masters student at Northwestern University studying Machine Learning and Data Science
 show_downloads: true
 theme: jekyll-theme-minimal
