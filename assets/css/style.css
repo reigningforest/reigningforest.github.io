@@ -1,8 +1,0 @@
-/* Custom CSS for making images circular */
-
-.circular-image {
-    width: 150px; /* Adjust the size as needed */
-    height: 150px; /* Same value as width for a perfect circle */
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensures the image scales properly */
-}
