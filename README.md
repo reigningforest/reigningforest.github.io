@@ -20,23 +20,23 @@
 
 
 ## Example Work Projects
-### [Celebrity WikiMedia Webscraper](../Celebrity_Wikimedia_Scraper)
+### [Celebrity WikiMedia Webscraper](https://github.com/reigningforest/Celebrity_Wikimedia_Scraper)
 - **Overview**: Extracted Images from Wikimedia Commons
 - **Tools**: Python
 - **Key Results**: Assembled a database of face images for health quantification research at BWH
 
-### [Automated Cox Proportional Hazards Analysis](../CoxPH_Analysis_Simple)
+### [Automated Cox Proportional Hazards Analysis](https://github.com/reigningforest/CoxPH_Analysis_Simple)
 - **Overview**: Automated univariate and multivariate analysis Cox PH Analyses across covariates
 - **Tools**: R
 - **Key Results**: Used significant covariates from univariate analyses for multivariate analyses
 
-### [R Data Manipulation Tutorial](../R_data_tutorial)
+### [R Data Manipulation Tutorial](https://github.com/reigningforest/R_data_tutorial)
 - **Overview**: Provides an overview of R functions for data manipulation
 - **Tools**: R
 - **Key Results**: Was used to help coworkers who wanted to get better at working with data in their projects/studies
 
 ## Personal Projects
-### [MLDS Hackathon 2024 - Soccer Project](../CoxPH_Analysis_Simple)
+### [MLDS Hackathon 2024 - Soccer Project](https://github.com/reigningforest/CoxPH_Analysis_Simple)
 - **Overview**: Participated in the program's annual 48 hour hackathon
 - **Tools**: Python
 - **Key Results**: Worked in a team of 4 to create initial lineup selection (random forest), player substitutions (collaborative filtering), and general recommendations (ChatGpt wrapper)
