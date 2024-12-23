@@ -2,7 +2,7 @@
 
 ## About Me
 - I am currently a Machine Learning and Data Science graduate student at Northwestern University, expected to graduate in December 2025.
-- I worked for 3 years at Brigham and Women's Hospital / Dana Farber Cancer Insitute in Radiation Oncology research
+- I worked for 3 years at Brigham and Women's Hospital (BWH) / Dana Farber Cancer Institute (DFCI) in Radiation Oncology research
 - I have a background in Molecular Biology and Biochemistry from Middlebury College
 
 
@@ -12,7 +12,7 @@
 
 
 ## Work Experience
-### Data Coorindator at BWH/DFCI
+### Data Coordinator at BWH/DFCI
 - Developed ETL workflows using R and Python, achieving 100% database expansion
 - Created a Python web scraper collecting 10,000+ facial images for ML model testing
 - Implemented Python-based analysis for thoracic CT imaging, reducing processing time by 50%
@@ -39,6 +39,6 @@
 ### [MLDS Hackathon 2024 - Soccer Project](../CoxPH_Analysis_Simple)
 - **Overview**: Participated in the program's annual 48 hour hackathon
 - **Tools**: Python
-- **Key Results**: Worked in a team of 4 to create initial lineup selection (random forest), player substitutions (collaborative filtering), and general recommendations (chatgpt wrapper)
+- **Key Results**: Worked in a team of 4 to create initial lineup selection (random forest), player substitutions (collaborative filtering), and general recommendations (ChatGpt wrapper)
 
 #### More to come!
