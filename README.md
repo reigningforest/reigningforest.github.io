@@ -19,7 +19,7 @@
 - Conducted survival analysis using Cox Proportional Hazards models
 
 ## Personal Projects
-### [MLDS Hackathon 2024 - Soccer Project](https://github.com/reigningforest/CoxPH_Analysis_Simple)
+### [MLDS Hackathon 2024 - Soccer Analytics](https://github.com/reigningforest/CoxPH_Analysis_Simple)
 - **Overview**: Participated in the program's annual 48 hour hackathon
 - **Tools**: Python
 - **Key Results**: Worked in a team of 4 to create initial lineup selection (random forest), player substitutions (collaborative filtering), and general recommendations (ChatGpt wrapper)
