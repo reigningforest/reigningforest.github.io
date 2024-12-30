@@ -18,6 +18,13 @@
 - Implemented Python-based analysis for thoracic CT imaging, reducing processing time by 50%
 - Conducted survival analysis using Cox Proportional Hazards models
 
+## Personal Projects
+### [MLDS Hackathon 2024 - Soccer Project](https://github.com/reigningforest/CoxPH_Analysis_Simple)
+- **Overview**: Participated in the program's annual 48 hour hackathon
+- **Tools**: Python
+- **Key Results**: Worked in a team of 4 to create initial lineup selection (random forest), player substitutions (collaborative filtering), and general recommendations (ChatGpt wrapper)
+
+#### More to come!
 
 ## Example Work Projects
 ### [Celebrity WikiMedia Webscraper](https://github.com/reigningforest/Celebrity_Wikimedia_Scraper)
@@ -35,10 +42,3 @@
 - **Tools**: R
 - **Key Results**: Was used to help coworkers who wanted to get better at working with data in their projects/studies
 
-## Personal Projects
-### [MLDS Hackathon 2024 - Soccer Project](https://github.com/reigningforest/CoxPH_Analysis_Simple)
-- **Overview**: Participated in the program's annual 48 hour hackathon
-- **Tools**: Python
-- **Key Results**: Worked in a team of 4 to create initial lineup selection (random forest), player substitutions (collaborative filtering), and general recommendations (ChatGpt wrapper)
-
-#### More to come!
