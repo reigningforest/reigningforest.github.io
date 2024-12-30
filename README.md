@@ -33,7 +33,7 @@
 ### [Celebrity WikiMedia Webscraper](https://github.com/reigningforest/Celebrity_Wikimedia_Scraper)
 - **Overview**: Extracted Images from Wikimedia Commons
 - **Tools**: Python
-- **Key Results**: Assembled a database of face images for health quantification research at BWH
+- **Key Results**: Assembled a database of images for health quantification research at BWH
 
 ### [Automated Cox Proportional Hazards Analysis](https://github.com/reigningforest/CoxPH_Analysis_Simple)
 - **Overview**: Automated univariate and multivariate analysis Cox PH Analyses across covariates
