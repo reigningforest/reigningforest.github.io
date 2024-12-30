@@ -24,7 +24,10 @@
 - **Tools**: Python
 - **Key Results**: Worked in a team of 4 to create initial lineup selection (random forest), player substitutions (collaborative filtering), and general recommendations (ChatGpt wrapper)
 
-#### More to come!
+### Video Game Analysis - In Progress
+- **Overview**: Looking at trends in Steam's video game data
+- **Tools**: Python
+- **Key Results**: Currently working on this!
 
 ## Example Work Projects
 ### [Celebrity WikiMedia Webscraper](https://github.com/reigningforest/Celebrity_Wikimedia_Scraper)
