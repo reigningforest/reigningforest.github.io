@@ -1,4 +1,5 @@
 # Data Science Masters Student
+Please feel free to reach out if you'd like my resume!
 
 ## About Me
 - I am currently a Machine Learning and Data Science graduate student at Northwestern University, expected to graduate in December 2025.
