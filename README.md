@@ -13,7 +13,7 @@ Please feel free to reach out if you would like a copy of my resume!
 
 
 ## Work Experience
-### Data Coordinator at BWH/DFCI
+### Data Engineer at BWH/DFCI
 - Developed ETL workflows using R and Python, achieving 100% database expansion
 - Created a Python web scraper collecting 10,000+ facial images for ML model testing
 - Implemented Python-based analysis for thoracic CT imaging, reducing processing time by 50%
