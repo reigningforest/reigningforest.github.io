@@ -1,5 +1,5 @@
-# Data Science Masters Student
-Please feel free to reach out if you would like a copy of my resume!
+# Aspiring Data Scientist
+Check out some of the research I was part of: [My OrcId Profile](https://orcid.org/0009-0002-9787-0426)
 
 ## About Me
 - I am currently a Machine Learning and Data Science graduate student at Northwestern University, expected to graduate in December 2025.
@@ -18,7 +18,6 @@ Please feel free to reach out if you would like a copy of my resume!
 - Created a Python web scraper collecting 10,000+ facial images for ML model testing
 - Implemented Python-based analysis for thoracic CT imaging, reducing processing time by 50%
 - Conducted survival analysis using Cox Proportional Hazards models
-- **Check out some of the research I was part of: [My OrcId Profile](https://orcid.org/0009-0002-9787-0426)**
 
 ## Personal Projects
 ### [MLDS Hackathon 2024 - Soccer Analytics](https://github.com/reigningforest/CoxPH_Analysis_Simple)
