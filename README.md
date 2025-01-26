@@ -31,7 +31,7 @@ Check out some of the research I was part of: [My OrcId Profile](https://orcid.o
 - **Key Results**: Currently working on this!
 
 ## Example Work Projects
-### [Celebrity WikiMedia Webscraper](https://github.com/reigningforest/Celebrity_Wikimedia_Scraper)
+### [Celebrity Image Webscraper](https://github.com/reigningforest/Celebrity_Image_Scraper)
 - **Overview**: Extracted Images from Wikimedia Commons
 - **Tools**: Python
 - **Key Results**: Assembled a database of images for research at BWH
