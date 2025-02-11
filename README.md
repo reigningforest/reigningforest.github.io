@@ -19,18 +19,22 @@ Check out some of the research I was part of: [My OrcId Profile](https://orcid.o
 - Implemented Python-based analysis for thoracic CT imaging, reducing processing time by 50%
 - Conducted survival analysis using Cox Proportional Hazards models
 
-## Personal Projects
+## Projects
+### [RAG-based Article Search](https://github.com/reigningforest/rag_article_search)
+- **Overview**: Will eventually allow you to use RAG to summarize topics/retrieve articles.
+- **Tools**: Python
+- **Key Results**: Currently working on this!
+
 ### [MLDS Hackathon 2024 - Soccer Analytics](https://github.com/reigningforest/CoxPH_Analysis_Simple)
 - **Overview**: Participated in the program's annual 48 hour hackathon
 - **Tools**: Python
 - **Key Results**: Worked in a team of 4 to create initial lineup selection (random forest), player substitutions (collaborative filtering), and general recommendations (ChatGpt wrapper)
 
-### Video Game Analysis - In Progress
+### [Video Game Analysis - In Progress](https://github.com/reigningforest/steam_analysis)
 - **Overview**: Looking at trends in Steam's video game data
 - **Tools**: Python
 - **Key Results**: Currently working on this!
 
-## Example Work Projects
 ### [Celebrity Image Webscraper](https://github.com/reigningforest/Celebrity_Image_Scraper)
 - **Overview**: Extracted Images from Wikimedia Commons
 - **Tools**: Python
