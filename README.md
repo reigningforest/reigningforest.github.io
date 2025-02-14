@@ -20,7 +20,7 @@ Check out some of the research I was part of: [My OrcId Profile](https://orcid.o
 - Conducted survival analysis using Cox Proportional Hazards models
 
 ## Projects
-### [RAG-based Article Search](https://github.com/reigningforest/rag_article_search)
+### [RAG-based Article Search - In Progress](https://github.com/reigningforest/rag_article_search)
 - **Overview**: Will eventually allow you to use RAG to summarize topics/retrieve articles.
 - **Tools**: Python
 - **Key Results**: Currently working on this!
