@@ -38,7 +38,7 @@ Check out some of the research I was part of: [My OrcId Profile](https://orcid.o
 ### [Celebrity Image Webscraper](https://github.com/reigningforest/Celebrity_Image_Scraper)
 - **Overview**: Extracted Images from Wikimedia Commons
 - **Tools**: Python
-- **Key Results**: Assembled a database of images for research at BWH
+- **Key Results**: Assembled a database of images
 
 ### [Automated Cox Proportional Hazards Analysis](https://github.com/reigningforest/CoxPH_Analysis_Simple)
 - **Overview**: Automated univariate and multivariate analysis Cox PH Analyses across covariates
