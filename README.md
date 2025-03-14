@@ -13,7 +13,7 @@ Check out some of the research I was part of: [My OrcId Profile](https://orcid.o
 
 
 ## Work Experience
-### Data Engineer at BWH/DFCI
+### Data Coordinator at BWH/DFCI
 - Developed ETL workflows using R and Python, achieving 100% database expansion
 - Created a Python web scraper collecting 10,000+ facial images for ML model testing
 - Implemented Python-based analysis for thoracic CT imaging, reducing processing time by 50%
