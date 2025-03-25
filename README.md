@@ -20,7 +20,7 @@ Check out some of the research I was part of: [My OrcId Profile](https://orcid.o
 - Conducted survival analysis using Cox Proportional Hazards models
 
 ## Projects
-### [Article-based Querying using RAGs](https://github.com/reigningforest/rag_article_search)
+### [Article Querying using RAG-based LLMs](https://github.com/reigningforest/rag_article_search)
 - **Overview**: Used an Agentic AI structure to explore the interaction between RAG and LLMs in the context of Article searches.
 - **Tools**: Python
 - **Key Results**: Currently working on this!
