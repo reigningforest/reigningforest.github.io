@@ -1,14 +1,15 @@
 # Aspiring Data Scientist
 Check out some of the research I was part of: [My OrcId Profile](https://orcid.org/0009-0002-9787-0426)
 
+
 ## About Me
 - I am currently a Machine Learning and Data Science graduate student at Northwestern University, expected to graduate in December 2025.
 - I worked for 3 years at Brigham and Women's Hospital (BWH) / Dana Farber Cancer Institute (DFCI) in Radiation Oncology research
-- I have a background in Molecular Biology and Biochemistry from Middlebury College
+- I have a Bachelor of Arts in Molecular Biology and Biochemistry from Middlebury College.
 
 
 ## Education
-- MS in Machine Learning and Data Science - Northwestern University (GPA: 3.91)
+- MS in Machine Learning and Data Science - Northwestern University (GPA: 3.97)
 - BA in Molecular Biology and Biochemistry - Middlebury College (magna cum laude, GPA: 3.64)
 
 
@@ -19,11 +20,12 @@ Check out some of the research I was part of: [My OrcId Profile](https://orcid.o
 - Implemented Python-based analysis for thoracic CT imaging, reducing processing time by 50%
 - Conducted survival analysis using Cox Proportional Hazards models
 
+
 ## Projects
 ### [Article Querying using RAG-based LLMs](https://github.com/reigningforest/rag_article_search)
 - **Overview**: Used an Agentic AI structure to explore the interaction between RAG and LLMs in the context of Article searches.
 - **Tools**: Python
-- **Key Results**: Currently working on this!
+- **Key Results**: While this does work, I hope to make queries more accurate in the future.
 
 ### [MLDS Hackathon 2024 - Soccer Analytics](https://github.com/reigningforest/CoxPH_Analysis_Simple)
 - **Overview**: Participated in the program's annual 48 hour hackathon
