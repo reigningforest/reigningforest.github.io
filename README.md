@@ -16,7 +16,7 @@ Check out some of the research I was part of: [My OrcId Profile](https://orcid.o
 
 ## Work Experience
 ### Real World Science Data Intern at Alexion, AstraZeneca
-- Leveraging the power of LLMs to automate some manual, text heavy processes.
+- Leveraging the power of LLMs to automate some manual, text-heavy processes.
 
 ### Data Coordinator at BWH/DFCI
 - Developed ETL workflows using R and Python to provide data efficiently to researchers, reducing data retrieval time from weeks to days.

@@ -12,9 +12,17 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Theme toggle event listener
     themeCheckbox.addEventListener('change', function() {
+        // Add transition class for smooth theme change
+        document.body.classList.add('theme-transition');
+        
         const newTheme = this.checked ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
+        
+        // Remove transition class after animation
+        setTimeout(() => {
+            document.body.classList.remove('theme-transition');
+        }, 300);
     });
 });
 
@@ -76,8 +84,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Mobile Menu Toggle (for future enhancement)
 document.addEventListener('DOMContentLoaded', function() {
-    // Placeholder for mobile menu functionality if needed
-    // Can be expanded later for hamburger menu on very small screens
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('mobile-open');
+        });
+        
+        // Close mobile menu when clicking on a link
+        navLinks.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('mobile-open');
+            }
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('mobile-open');
+            }
+        });
+    }
 });
 
 // Scroll to Top Functionality (optional enhancement)
