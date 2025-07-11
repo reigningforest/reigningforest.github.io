@@ -3,7 +3,8 @@ Check out some of the research I was part of: [My OrcId Profile](https://orcid.o
 
 
 ## About Me
-- I am currently a Machine Learning and Data Science graduate student at Northwestern University, expected to graduate in December 2025.
+- I am at Alexion, the Rare Disease Unit of AstraZeneca, as a Data Intern.
+- I am a Machine Learning and Data Science graduate student at Northwestern University, expected to graduate in December 2025.
 - I worked for 3 years at Brigham and Women's Hospital (BWH) / Dana Farber Cancer Institute (DFCI) in Radiation Oncology research
 - I have a Bachelor of Arts in Molecular Biology and Biochemistry from Middlebury College.
 
@@ -14,11 +15,13 @@ Check out some of the research I was part of: [My OrcId Profile](https://orcid.o
 
 
 ## Work Experience
+### Real World Science Data Intern at Alexion, AstraZeneca
+- Leveraging the power of LLMs to automate some manual, text heavy processes.
+
 ### Data Coordinator at BWH/DFCI
-- Developed ETL workflows using R and Python, achieving 100% database expansion
-- Created a Python web scraper collecting 10,000+ facial images for ML model testing
-- Implemented Python-based analysis for thoracic CT imaging, reducing processing time by 50%
-- Conducted survival analysis using Cox Proportional Hazards models
+- Developed ETL workflows using R and Python to provide data efficiently to researchers, reducing data retrieval time from weeks to days.
+- Conducted survival analyses using Cox Proportional Hazards models to assist physicians in research reports.
+- Created a Python web scraper collecting 10,000+ facial images for ML model testing.
 
 
 ## Projects
