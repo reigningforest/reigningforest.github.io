@@ -184,6 +184,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Experience Card Expansion
+function toggleExperience(button) {
+    const card = button.closest('.experience-card');
+    const details = card.querySelector('.experience-details');
+    const isExpanded = details.classList.contains('expanded');
+    
+    if (isExpanded) {
+        details.classList.remove('expanded');
+        button.classList.remove('expanded');
+        button.querySelector('span:first-child').textContent = 'View Details';
+    } else {
+        details.classList.add('expanded');
+        button.classList.add('expanded');
+        button.querySelector('span:first-child').textContent = 'Hide Details';
+    }
+}
+
 // Performance optimization: Throttle scroll events
 function throttle(func, limit) {
     let inThrottle;
