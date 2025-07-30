@@ -364,12 +364,7 @@ body {
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 5px 15px var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.education-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px var(--shadow-hover);
+  border: 1px solid var(--border-color);
 }
 
 .education-item h3 {
@@ -409,13 +404,7 @@ body {
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 5px 15px var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid var(--border-color);
-}
-
-.experience-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px var(--shadow-hover);
 }
 
 .experience-header h3 {
