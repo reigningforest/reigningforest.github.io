@@ -184,45 +184,48 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Experience Card Expansion
-function toggleExperience(button) {
-    const card = button.closest('.experience-card');
-    const details = card.querySelector('.experience-details');
-    const isExpanded = details.classList.contains('expanded');
-    
-    if (isExpanded) {
-        details.classList.remove('expanded');
-        button.classList.remove('expanded');
-        button.querySelector('span:first-child').textContent = 'View Details';
-    } else {
-        details.classList.add('expanded');
-        button.classList.add('expanded');
-        button.querySelector('span:first-child').textContent = 'Hide Details';
-    }
-}
-
-// Performance optimization: Throttle scroll events
-function throttle(func, limit) {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    }
-}
-
-// Apply throttling to scroll events for better performance
+// Experience Card Accordion Animation
 document.addEventListener('DOMContentLoaded', function() {
-    const scrollEvents = ['scroll'];
-    const throttledEvents = scrollEvents.map(event => {
-        const handlers = [];
-        window.addEventListener(event, throttle(function(e) {
-            handlers.forEach(handler => handler(e));
-        }, 16)); // ~60fps
-        return handlers;
+    const experienceCards = document.querySelectorAll('.experience-card');
+    
+    experienceCards.forEach(card => {
+        const expandBtn = card.querySelector('.expand-btn');
+        const detailsSection = card.querySelector('.experience-details');
+        
+        // Store the natural height for smooth animations
+        let naturalHeight = 0;
+        
+        function calculateHeight() {
+            // Temporarily expand to get natural height
+            detailsSection.style.height = 'auto';
+            naturalHeight = detailsSection.scrollHeight;
+            detailsSection.style.height = '0';
+        }
+        
+        function toggleCard() {
+            const isExpanded = card.classList.contains('expanded');
+            
+            if (isExpanded) {
+                // Collapse this card
+                card.classList.remove('expanded');
+                detailsSection.style.height = '0';
+            } else {
+                // Expand this card
+                card.classList.add('expanded');
+                calculateHeight();
+                detailsSection.style.height = naturalHeight + 'px';
+            }
+        }
+        
+        // Add click listener to button
+        if (expandBtn) {
+            expandBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleCard();
+            });
+        }
+        
+        // Calculate initial height
+        calculateHeight();
     });
 });

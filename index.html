@@ -30,15 +30,15 @@
                 <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
             </div>
-            <div class="mobile-menu-toggle" id="mobileMenuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="mobile-menu-toggle transition-smooth" id="mobileMenuToggle">
+                <span class="transition-smooth"></span>
+                <span class="transition-smooth"></span>
+                <span class="transition-smooth"></span>
             </div>
             <div class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
                 <input type="checkbox" id="theme-checkbox" class="theme-checkbox">
-                <label for="theme-checkbox" class="theme-slider">
-                    <span class="theme-slider-button"></span>
+                <label for="theme-checkbox" class="theme-slider transition-smooth">
+                    <span class="theme-slider-button transition-smooth"></span>
                 </label>
             </div>
         </div>
@@ -56,9 +56,9 @@
                     <h2>Data Scientist</h2>
                     <p class="hero-description">Masters student at Northwestern University studying Machine Learning and Data Science</p>
                     <div class="hero-links">
-                        <a href="https://github.com/reigningforest" target="_blank" class="btn btn-primary">GitHub</a>
-                        <a href="https://www.linkedin.com/in/jhe1/" target="_blank" class="btn btn-secondary">LinkedIn</a>
-                        <a href="https://orcid.org/0009-0002-9787-0426" target="_blank" class="btn btn-secondary">My OrcId Profile</a>
+                        <a href="https://github.com/reigningforest" target="_blank" class="btn btn-primary transition-smooth hover-lift">GitHub</a>
+                        <a href="https://www.linkedin.com/in/jhe1/" target="_blank" class="btn btn-secondary transition-smooth hover-lift">LinkedIn</a>
+                        <a href="https://orcid.org/0009-0002-9787-0426" target="_blank" class="btn btn-secondary transition-smooth hover-lift">My OrcId Profile</a>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
             <div class="projects-grid">
                 
                 <a href="https://github.com/reigningforest/rag_article_search" target="_blank" class="project-card-link">
-                    <div class="project-card">
+                    <div class="project-card transition-medium">
                         <h3>Article Querying using RAG-based LLMs</h3>
                         <div class="tech-badges">
                             <span class="tech-badge">Python</span>
@@ -118,7 +118,7 @@
                 </a>
 
                 <a href="https://github.com/reigningforest/CoxPH_Analysis_Simple" target="_blank" class="project-card-link">
-                    <div class="project-card">
+                    <div class="project-card transition-medium">
                         <h3>MLDS Hackathon 2024 - Soccer Analytics</h3>
                         <div class="tech-badges">
                             <span class="tech-badge">Python</span>
@@ -129,7 +129,7 @@
                 </a>
 
                 <a href="https://github.com/reigningforest/steam_analysis" target="_blank" class="project-card-link">
-                    <div class="project-card">
+                    <div class="project-card transition-medium">
                         <h3>Video Game Analysis - In Progress</h3>
                         <div class="tech-badges">
                             <span class="tech-badge">Python</span>
@@ -140,7 +140,7 @@
                 </a>
 
                 <a href="https://github.com/reigningforest/Celebrity_Image_Scraper" target="_blank" class="project-card-link">
-                    <div class="project-card">
+                    <div class="project-card transition-medium">
                         <h3>Celebrity Image Webscraper</h3>
                         <div class="tech-badges">
                             <span class="tech-badge">Python</span>
@@ -151,7 +151,7 @@
                 </a>
 
                 <a href="https://github.com/reigningforest/CoxPH_Analysis_Simple" target="_blank" class="project-card-link">
-                    <div class="project-card">
+                    <div class="project-card transition-medium">
                         <h3>Automated Cox Proportional Hazards Analysis</h3>
                         <div class="tech-badges">
                             <span class="tech-badge">R</span>
@@ -162,7 +162,7 @@
                 </a>
 
                 <a href="https://github.com/reigningforest/R_data_tutorial" target="_blank" class="project-card-link">
-                    <div class="project-card">
+                    <div class="project-card transition-medium">
                         <h3>R Data Manipulation Tutorial</h3>
                         <div class="tech-badges">
                             <span class="tech-badge">R</span>
@@ -181,34 +181,35 @@
         <div class="container">
             <h2 class="section-title">Work Experience</h2>
             <div class="experience-grid">
-                <div class="experience-card">
+                <div class="experience-card transition-smooth">
                     <div class="experience-header">
                         <h3>Real World Science Data Intern</h3>
                         <p class="company">Alexion, AstraZeneca Rare Disease | Wilmington, DE</p>
                         <p class="experience-date">Jun 2025 - Aug 2025</p>
-                        <p class="experience-summary">Leveraged LLMs to create an end to end pipeline to download, filter, and extract data from research articles.</p>
-                        <button class="expand-btn" onclick="toggleExperience(this)">
-                            <span>View Details</span>
+                        <p class="experience-summary">Architected an automated Python pipeline leveraging GPT-4o API to process 300+ scientific articles and developed LLM-based tools, presenting results that demonstrated 80% reduction in manual review time.</p>
+                        <button class="expand-btn transition-smooth">
+                            <span class="expand-text"></span>
                             <span class="expand-icon">▼</span>
                         </button>
                     </div>
                     <div class="experience-details">
                         <ul class="experience-list">
                             <li>Architected an end-to-end automated pipeline in Python to construct a specialized dataset of <strong>300+ scientific articles</strong>, handling the querying, downloading, and processing of unstructured text.</li>
-                            <li>Leveraged <strong>GPT-4o API</strong> within the pipeline to parse, summarize, and extract key information from unstructured text, enabling researchers to rapidly conduct cross-study analysis</li>
+                            <li>Leveraged the <strong>GPT-4o API</strong> within the pipeline to parse and summarize unstructured text, enabling researchers to rapidly conduct cross-study analysis.</li>
                             <li>Developed an <strong>LLM-based tool</strong> to assign unit conversion factors, leveraging a master table for robust mapping.</li>
+                            <li>Presented project outcomes to department leadership and research teams, tailoring presentations for technical and executive audiences to demonstrate up to <strong>80% reduction in manual review time</strong>.</li>
                         </ul>
                     </div>
                 </div>
                 
-                <div class="experience-card">
+                <div class="experience-card transition-smooth">
                     <div class="experience-header">
                         <h3>Data Coordinator (Data Science)</h3>
                         <p class="company">Brigham and Women's Hospital / Dana Farber Cancer Institute | Boston, MA</p>
                         <p class="experience-date">Sep 2021 - Mar 2025</p>
                         <p class="experience-summary">Engineered ETL pipelines to curate and expand a cancer database to streamline research data access.</p>
-                        <button class="expand-btn" onclick="toggleExperience(this)">
-                            <span>View Details</span>
+                        <button class="expand-btn transition-smooth">
+                            <span class="expand-text"></span>
                             <span class="expand-icon">▼</span>
                         </button>
                     </div>
