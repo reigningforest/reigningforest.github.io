@@ -10,7 +10,7 @@ Check out some of the research I was part of: [My OrcId Profile](https://orcid.o
 
 
 ## Education
-- MS in Machine Learning and Data Science - Northwestern University (GPA: 3.97)
+- MS in Machine Learning and Data Science - Northwestern University (GPA: 3.98)
 - BA in Molecular Biology and Biochemistry - Middlebury College (magna cum laude, GPA: 3.64)
 
 
