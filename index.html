@@ -25,10 +25,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#education">Education</a>
+                <a href="#hero">Home</a>
                 <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
             </div>
             <div class="mobile-menu-toggle transition-smooth" id="mobileMenuToggle">
                 <span class="transition-smooth"></span>
@@ -47,41 +47,257 @@
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-image">
-                    <img src="assets/img/logo.jpg" alt="John He" class="profile-image">
-                </div>
-                <div class="hero-text">
+            <div class="hero-content-split">
+                <div class="hero-text-side">
                     <h1>John He</h1>
-                    <h2>Data Scientist</h2>
+                    <h2>Data Scientist & ML Engineer</h2>
+                    <p class="hero-tagline">Specializing in LLM Agents, RAG Systems, and Scalable ETL Pipelines.</p>
                     <p class="hero-description">Masters student at Northwestern University studying Machine Learning and Data Science</p>
+                    
                     <div class="hero-links">
-                        <a href="https://github.com/reigningforest" target="_blank" class="btn btn-primary transition-smooth hover-lift">GitHub</a>
+                        <a href="https://github.com/reigningforest" target="_blank" class="btn btn-secondary transition-smooth hover-lift">GitHub</a>
                         <a href="https://www.linkedin.com/in/jhe1/" target="_blank" class="btn btn-secondary transition-smooth hover-lift">LinkedIn</a>
-                        <a href="https://orcid.org/0009-0002-9787-0426" target="_blank" class="btn btn-secondary transition-smooth hover-lift">My OrcId Profile</a>
+                        <a href="https://orcid.org/0009-0002-9787-0426" target="_blank" class="btn btn-secondary transition-smooth hover-lift">OrcId Profile</a>
                     </div>
+
+                    <div class="tech-stack-bar">
+                        <div class="tech-category">
+                            <span class="tech-label">AI/LLM:</span>
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">LangChain</span>
+                            <span class="tech-pill">RAG</span>
+                            <span class="tech-pill">PyTorch</span>
+                            <span class="tech-pill">HuggingFace</span>
+                        </div>
+                        <div class="tech-category">
+                            <span class="tech-label">Cloud/Eng:</span>
+                            <span class="tech-pill">AWS Glue</span>
+                            <span class="tech-pill">Redshift</span>
+                            <span class="tech-pill">Docker</span>
+                            <span class="tech-pill">SQL</span>
+                            <span class="tech-pill">Spark</span>
+                        </div>
+                        <div class="tech-category">
+                            <span class="tech-label">Analytics:</span>
+                            <span class="tech-pill">R</span>
+                            <span class="tech-pill">Tableau</span>
+                            <span class="tech-pill">Survival Analysis</span>
+                            <span class="tech-pill">Causal Inference</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image-side">
+                    <img src="assets/img/logo.jpg" alt="John He" class="profile-image">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="section" id="about">
+    <!-- Projects Section -->
+    <section class="section" id="projects">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <ul class="about-list">
-                    <li>I was the 2025 Summer Data Intern at Alexion, the Rare Disease Unit of AstraZeneca.</li>
-                    <li>I am a Machine Learning and Data Science graduate student at Northwestern University, expected to graduate in December 2025.</li>
-                    <li>I worked for 3 years at Brigham and Women's Hospital (BWH) / Dana Farber Cancer Institute (DFCI) in Radiation Oncology research</li>
-                    <li>I have a Bachelor of Arts in Molecular Biology and Biochemistry from Middlebury College.</li>
-                </ul>
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid featured-grid">
+                
+                <a href="https://github.com/reigningforest/rag_article_search" target="_blank" class="project-card-link featured-card">
+                    <div class="project-card transition-medium">
+                        <h3>RAG LLM System for Scientific Literature</h3>
+                        <div class="tech-badges">
+                            <span class="tech-badge">LangGraph</span>
+                            <span class="tech-badge">Pinecone</span>
+                            <span class="tech-badge">LoRA</span>
+                            <span class="tech-badge">Gemini API</span>
+                        </div>
+                        <p><strong>Overview:</strong> Built an agentic RAG system over 800,000+ arXiv abstracts with query classification and semantic search.</p>
+                        <p><strong>Key Results:</strong> Fine-tuned a 1.8B parameter LLM to simplify abstracts and deployed a Streamlit app for real-time research synthesis.</p>
+                    </div>
+                </a>
+
+                <a href="#" target="_blank" class="project-card-link featured-card">
+                    <div class="project-card transition-medium">
+                        <h3>Cloud-Based Intrusion Detection System</h3>
+                        <div class="tech-badges">
+                            <span class="tech-badge">AWS Glue</span>
+                            <span class="tech-badge">Redshift</span>
+                            <span class="tech-badge">PySpark</span>
+                            <span class="tech-badge">VPC</span>
+                        </div>
+                        <p><strong>Overview:</strong> Designed cloud-native data infrastructure processing 2.5M+ network traffic records for intrusion detection.</p>
+                        <p><strong>Key Results:</strong> Implemented automated schema inference and date-partitioned storage to power real-time security models.</p>
+                    </div>
+                </a>
+            </div>
+
+            <h3 class="subsection-title">More Projects</h3>
+            <div class="projects-grid">
+                <a href="#" target="_blank" class="project-card-link">
+                    <div class="project-card transition-medium">
+                        <h3>Bank Customer Churn Prediction</h3>
+                        <div class="tech-badges">
+                            <span class="tech-badge">XGBoost</span>
+                            <span class="tech-badge">LightGBM</span>
+                        </div>
+                        <p><strong>Key Results:</strong> Achieved 86% accuracy and boosted at-risk customer identification by 20% (55% to 75% recall) via threshold tuning.</p>
+                    </div>
+                </a>
+
+                <a href="#" target="_blank" class="project-card-link">
+                    <div class="project-card transition-medium">
+                        <h3>Market Sales Forecasting</h3>
+                        <div class="tech-badges">
+                            <span class="tech-badge">ARIMA</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                        </div>
+                        <p><strong>Key Results:</strong> Forecasted sales for top 10 departments, identifying those with >90% projected ROI to guide strategic investment.</p>
+                    </div>
+                </a>
+
+                <a href="https://github.com/reigningforest/CoxPH_Analysis_Simple" target="_blank" class="project-card-link">
+                    <div class="project-card transition-medium">
+                        <h3>AI-Powered Soccer Analytics</h3>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Random Forest</span>
+                            <span class="tech-badge">Collaborative Filtering</span>
+                        </div>
+                        <p><strong>Key Results:</strong> Delivered 3 analytics tools (lineup predictor, synergy finder, tactical chatbot) in a 48-hour hackathon.</p>
+                    </div>
+                </a>
+
+                <a href="https://github.com/reigningforest/simple_nlp_answering_system" target="_blank" class="project-card-link">
+                    <div class="project-card transition-medium">
+                        <h3>Simple NLP Answering System</h3>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">NLP</span>
+                        </div>
+                        <p><strong>Overview:</strong> A natural language processing system for question answering tasks.</p>
+                    </div>
+                </a>
+
+                <a href="https://github.com/reigningforest/yfinance_pipeline" target="_blank" class="project-card-link">
+                    <div class="project-card transition-medium">
+                        <h3>YFinance Data Pipeline</h3>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">ETL</span>
+                        </div>
+                        <p><strong>Overview:</strong> An automated data pipeline for fetching and processing financial data from Yahoo Finance.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section section-alt" id="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline-container">
+                
+                <!-- Videspan -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content transition-smooth">
+                        <div class="timeline-header">
+                            <span class="timeline-date">Sep 2025 - Present</span>
+                            <h3>Data Science Contractor (Capstone)</h3>
+                            <h4>Videspan | Evanston, IL</h4>
+                        </div>
+                        <p class="timeline-impact">Automating user queries via multi-tool calling and RAG.</p>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Deploying an agentic chatbot using a containerized, multi-service architecture (Docker Compose, FastAPI).</li>
+                                <li>Engineering the agent's core conversational logic with stateful context management.</li>
+                                <li>Developing the system's multimodal RAG knowledge base with Qwen3 and LangGraph.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monopar -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content transition-smooth">
+                        <div class="timeline-header">
+                            <span class="timeline-date">Sep 2025 - Present</span>
+                            <h3>Data Science Intern (Biostatistics)</h3>
+                            <h4>Monopar Therapeutics | Wilmette, IL</h4>
+                        </div>
+                        <p class="timeline-impact">Established significant health indicators using Cox PH models and survival analysis.</p>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Constructing predictive models from R&D datasets to investigate biomarker relationships.</li>
+                                <li>Performing survival analysis on clinical time-to-event data utilizing Generalized Linear Mixed Models and Kaplan-Meier curves.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alexion -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content transition-smooth">
+                        <div class="timeline-header">
+                            <span class="timeline-date">Jun 2025 - Aug 2025</span>
+                            <h3>Data Science Intern (LLM)</h3>
+                            <h4>Alexion, AstraZeneca Rare Disease | Wilmington, DE</h4>
+                        </div>
+                        <p class="timeline-impact">Reduced manual review time by 90% (30 min → 3 min) using LangChain & HPC.</p>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Architected an LLM pipeline using Langchain to identify relevant research articles and extract 20+ variables.</li>
+                                <li>Engineered a scalable, end-to-end data pipeline on a Slurm-managed HPC cluster to ingest 300+ scientific articles.</li>
+                                <li>Automated unit conversions by building an LLM-powered tool with >98% accuracy.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Azul 3D -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content transition-smooth">
+                        <div class="timeline-header">
+                            <span class="timeline-date">Sep 2024 - Jun 2025</span>
+                            <h3>Data Science Contractor (Industry Practicum)</h3>
+                            <h4>Azul 3D | Skokie, IL</h4>
+                        </div>
+                        <p class="timeline-impact">Cut experimental sample size by 33% via stratified sampling.</p>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Led a 3-person team to analyze 50+ material compositions, building a predictive framework to model reaction speeds.</li>
+                                <li>Devised a cost-effective experimental design methodology using stratified sampling.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brigham -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content transition-smooth">
+                        <div class="timeline-header">
+                            <span class="timeline-date">Sep 2021 - Mar 2025</span>
+                            <h3>Data Coordinator (Data Engineer)</h3>
+                            <h4>Brigham and Women's Hospital | Boston, MA</h4>
+                        </div>
+                        <p class="timeline-impact">Overhauled research data infrastructure, doubling accessible data volume.</p>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Built 10+ automated ETL pipelines, cutting project setup time from months to weeks.</li>
+                                <li>Developed a Python web scraper to download and curate a novel dataset of 10,000+ images.</li>
+                                <li>Built a Python NLP pipeline to parse 15GB+ of clinical notes.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Education Section -->
-    <section class="section section-alt" id="education">
+    <section class="section" id="education">
         <div class="container">
             <h2 class="section-title">Education</h2>
             <div class="education-grid">
@@ -95,131 +311,6 @@
                     <h3>BA in Molecular Biology and Biochemistry</h3>
                     <p class="institution">Middlebury College</p>
                     <p class="gpa">GPA: 3.64, magna cum laude</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="section" id="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                
-                <a href="https://github.com/reigningforest/rag_article_search" target="_blank" class="project-card-link">
-                    <div class="project-card transition-medium">
-                        <h3>Article Querying using RAG-based LLMs</h3>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Python</span>
-                        </div>
-                        <p><strong>Overview:</strong> Used an Agentic AI structure to explore the interaction between RAG and LLMs in the context of Article searches.</p>
-                        <p><strong>Key Results:</strong> Created a simple application that takes in a query and returns the most relevant abstracts. Provides a simplified abstract as well to explain technical jargon.</p>
-                    </div>
-                </a>
-
-                <a href="https://github.com/reigningforest/CoxPH_Analysis_Simple" target="_blank" class="project-card-link">
-                    <div class="project-card transition-medium">
-                        <h3>MLDS Hackathon 2024 - Soccer Analytics</h3>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Python</span>
-                        </div>
-                        <p><strong>Overview:</strong> Participated in the program's annual 48 hour hackathon</p>
-                        <p><strong>Key Results:</strong> Led a team of 4 to create initial lineup selection (random forest), player substitutions (collaborative filtering), and general recommendations (ChatGpt wrapper)</p>
-                    </div>
-                </a>
-
-                <a href="https://github.com/reigningforest/steam_analysis" target="_blank" class="project-card-link">
-                    <div class="project-card transition-medium">
-                        <h3>Video Game Analysis - In Progress</h3>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Python</span>
-                        </div>
-                        <p><strong>Overview:</strong> Looking at trends in Steam's video game data</p>
-                        <p><strong>Key Results:</strong> Performed exploratory data analysis and created visualizations to identify trends in player behavior and game performance.</p>
-                    </div>
-                </a>
-
-                <a href="https://github.com/reigningforest/Celebrity_Image_Scraper" target="_blank" class="project-card-link">
-                    <div class="project-card transition-medium">
-                        <h3>Celebrity Image Webscraper</h3>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Python</span>
-                        </div>
-                        <p><strong>Overview:</strong> Extracted Images from Wikimedia Commons</p>
-                        <p><strong>Key Results:</strong> Webscraped and assembled a database of images and dates they were taken/uploaded</p>
-                    </div>
-                </a>
-
-                <a href="https://github.com/reigningforest/CoxPH_Analysis_Simple" target="_blank" class="project-card-link">
-                    <div class="project-card transition-medium">
-                        <h3>Automated Cox Proportional Hazards Analysis</h3>
-                        <div class="tech-badges">
-                            <span class="tech-badge">R</span>
-                        </div>
-                        <p><strong>Overview:</strong> Automated univariate and multivariate analysis Cox PH Analyses across covariates</p>
-                        <p><strong>Key Results:</strong> Used significant covariates from univariate analyses in multivariate analyses</p>
-                    </div>
-                </a>
-
-                <a href="https://github.com/reigningforest/R_data_tutorial" target="_blank" class="project-card-link">
-                    <div class="project-card transition-medium">
-                        <h3>R Data Manipulation Tutorial</h3>
-                        <div class="tech-badges">
-                            <span class="tech-badge">R</span>
-                        </div>
-                        <p><strong>Overview:</strong> Provides an overview of R functions for data manipulation</p>
-                        <p><strong>Key Results:</strong> Used to help coworkers learn to use R in their projects/studies</p>
-                    </div>
-                </a>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="section section-alt" id="experience">
-        <div class="container">
-            <h2 class="section-title">Work Experience</h2>
-            <div class="experience-grid">
-                <div class="experience-card transition-smooth">
-                    <div class="experience-header">
-                        <h3>Real World Science Data Intern</h3>
-                        <p class="company">Alexion, AstraZeneca Rare Disease | Wilmington, DE</p>
-                        <p class="experience-date">Jun 2025 - Aug 2025</p>
-                        <p class="experience-summary">Architected an automated Python pipeline leveraging GPT-4o API to process 300+ scientific articles and developed LLM-based tools, presenting results that demonstrated 80% reduction in manual review time.</p>
-                        <button class="expand-btn transition-smooth">
-                            <span class="expand-text"></span>
-                            <span class="expand-icon">▼</span>
-                        </button>
-                    </div>
-                    <div class="experience-details">
-                        <ul class="experience-list">
-                            <li>Architected an end-to-end automated pipeline in Python to construct a specialized dataset of <strong>300+ scientific articles</strong>, handling the querying, downloading, and processing of unstructured text.</li>
-                            <li>Leveraged the <strong>GPT-4o API</strong> within the pipeline to parse and summarize unstructured text, enabling researchers to rapidly conduct cross-study analysis.</li>
-                            <li>Developed an <strong>LLM-based tool</strong> to assign unit conversion factors, leveraging a master table for robust mapping.</li>
-                            <li>Presented project outcomes to department leadership and research teams, tailoring presentations for technical and executive audiences to demonstrate up to <strong>80% reduction in manual review time</strong>.</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="experience-card transition-smooth">
-                    <div class="experience-header">
-                        <h3>Data Coordinator (Data Science)</h3>
-                        <p class="company">Brigham and Women's Hospital / Dana Farber Cancer Institute | Boston, MA</p>
-                        <p class="experience-date">Sep 2021 - Mar 2025</p>
-                        <p class="experience-summary">Engineered ETL pipelines to curate and expand a cancer database to streamline research data access.</p>
-                        <button class="expand-btn transition-smooth">
-                            <span class="expand-text"></span>
-                            <span class="expand-icon">▼</span>
-                        </button>
-                    </div>
-                    <div class="experience-details">
-                        <ul class="experience-list">
-                            <li>Spearheaded the design and optimization of ETL pipelines using Python and R, automating data entry procedures and resulting in <strong>100% database expansion</strong>.</li>
-                            <li>Engineered data collection pipeline using Python-based web scraping to build a dataset of more than <strong>10,000 facial images</strong> for testing of a health quantification machine learning model.</li>
-                            <li>Extracted and standardized medical data from <strong>15GB+ of semi-structured clinical documentation</strong> using regex and cleaning algorithms, enhancing research accessibility.</li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>

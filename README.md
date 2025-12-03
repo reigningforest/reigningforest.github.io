@@ -1,4 +1,4 @@
-# Aspiring Data Scientist
+# Data Scientist
 Check out some of the research I was part of: [My OrcId Profile](https://orcid.org/0009-0002-9787-0426)
 
 
