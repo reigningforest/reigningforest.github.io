@@ -10,6 +10,9 @@
   --border-color: #e9ecef;
   --shadow: rgba(0, 0, 0, 0.1);
   --shadow-hover: rgba(0, 0, 0, 0.2);
+  /* Pill colors (desaturated blue, less aggressive than --accent-primary) */
+  --pill-bg: #2C6AA0;
+  --pill-bg-hover: #245075;
 }
 
 [data-theme="dark"] {
@@ -23,6 +26,9 @@
   --border-color: #404040;
   --shadow: rgba(0, 0, 0, 0.3);
   --shadow-hover: rgba(0, 0, 0, 0.5);
+  /* Pill colors for dark theme (muted blue) */
+  --pill-bg: #245075;
+  --pill-bg-hover: #1d4260;
 }
 
 /* Reset and Base Styles */
@@ -304,21 +310,25 @@ body {
   letter-spacing: 0.5px;
 }
 
-.tech-pill {
-  background: var(--bg-primary);
-  color: var(--text-secondary);
-  padding: 4px 12px;
+.tech-pill, .tech-badge {
+  /* unified pill styles (used for both skills bar and project badges) */
+  background: var(--pill-bg);
+  color: white;
+  padding: 6px 12px;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 500;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 2px 4px var(--shadow);
-  transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  transition: background 0.15s ease, box-shadow 0.2s ease;
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.tech-pill:hover {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
+.tech-pill:hover, .tech-badge:hover {
+  background: var(--pill-bg-hover);
+  color: white;
   box-shadow: 0 2px 8px var(--shadow-hover);
 }
 
@@ -489,9 +499,11 @@ body {
 }
 
 .timeline-content:hover {
-  transform: translateY(-5px);
+  /* Hover: highlight only (no translation) */
+  transform: none;
   box-shadow: 0 10px 30px var(--shadow);
   border-color: var(--accent-primary);
+  transition: box-shadow 0.25s ease, border-color 0.2s ease;
 }
 
 /* Marker Dot */
@@ -626,7 +638,8 @@ body {
 }
 
 .featured-card .project-card {
-  border: 2px solid var(--accent-primary);
+  /* Featured card: neutral border */
+  border: 2px solid var(--border-color);
   background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
   min-height: 280px;
 }
@@ -656,25 +669,10 @@ body {
   cursor: pointer;
 }
 
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-  transition: left 0.6s ease;
-}
-
 .project-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 20px 40px var(--shadow-hover);
   border-color: var(--accent-primary);
-}
-
-.project-card:hover::before {
-  left: 100%;
 }
 
 .project-card h3 {
@@ -689,6 +687,38 @@ body {
   text-shadow: 0 0 8px var(--accent-primary);
 }
 
+/* Static project cards (no lift) */
+.project-card-static {
+  /* base appearance */
+  background: var(--bg-primary);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px var(--shadow);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+
+  /* non-clickable */
+  cursor: default;
+  /* transitions for visual emphasis */
+  transition: box-shadow 0.25s ease, border-color 0.2s ease;
+}
+
+/* Project card hover behavior (no sheen) */
+
+.project-card-static:hover {
+  /* Hover: apply visual highlight without transform */
+  transform: none !important; /* disable lift transform */
+  box-shadow: 0 20px 40px var(--shadow-hover);
+  border-color: var(--accent-primary);
+}
+
+.project-card-static:hover h3 {
+  color: var(--accent-primary);
+  text-shadow: 0 0 8px var(--accent-primary);
+}
+
 .tech-badges {
   margin-bottom: 1rem;
   display: flex;
@@ -696,15 +726,6 @@ body {
   gap: 0.5rem;
 }
 
-.tech-badge {
-  display: inline-block;
-  background: var(--accent-primary);
-  color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-}
 
 .project-card p {
   color: var(--text-secondary);
@@ -746,11 +767,6 @@ body {
     display: flex;
   }
   
-  .hero-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2rem;
-  }
 
   /* Timeline Mobile */
   .timeline-container::before {
@@ -780,26 +796,71 @@ body {
     right: auto !important;
   }
   
+  /* Hero: mobile stacking and spacing */
+  .hero {
+    padding-top: 60px; /* hero top padding (mobile) */
+    padding-bottom: 10px; /* hero bottom padding (mobile) */
+  }
+
   .hero-content-split {
     flex-direction: column-reverse;
     text-align: center;
+    gap: 0.6rem; /* tighter gap so name and image sit closer */
+    justify-content: center; /* center stacked items vertically within the hero */
+    align-items: center;
   }
   
   .hero-image-side {
-    margin-bottom: 2rem;
+    margin-bottom: 0.25rem; /* minimal gap between image and text */
+    align-items: center; /* keep image centered horizontally */
+    display: flex;
+    justify-content: center;
   }
   
   .hero-image-side .profile-image {
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
+    object-position: center top; /* center the face similarly to desktop */
+  }
+
+  /* Reduce heading spacing on mobile so name sits closer to image */
+  .hero-text-side h1 {
+    margin-bottom: 0.25rem;
+  }
+
+  .hero-text-side h2 {
+    margin-bottom: 0.5rem;
   }
   
+  /* Tech stack: left-aligned category rows for better mobile legibility */
   .tech-stack-bar {
-    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    align-items: flex-start; /* ensure all categories align to the left */
   }
   
   .tech-category {
-    justify-content: center;
+    display: block;
+    margin-bottom: 0.5rem;
+    text-align: left; /* make pills and content align left */
+  }
+
+  /* Label stays left-aligned for reading flow */
+  .tech-label {
+    display: block;
+    text-align: left;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  /* Pills flow left-to-right, wrap to next line, and are easy to tap */
+  .tech-category .tech-pill {
+    display: inline-block;
+    margin: 0 0.5rem 0.5rem 0;
+    padding: 6px 10px;
+    min-height: 40px;
+    font-size: 0.85rem;
   }
   
   .featured-grid {
@@ -841,7 +902,7 @@ body {
     display: flex;
   }
   
-  .hero-text h1 {
+  .hero-text-side h1 {
     font-size: 2rem;
   }
   
