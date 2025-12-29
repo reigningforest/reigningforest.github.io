@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Cloud-Based Intrusion Detection System — John He</title>
+    <meta name="description" content="A scalable, cloud-native Intrusion Detection System processing 2.5M+ records using AWS Glue, Redshift, and ECS Fargate. Built by John He.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+    <script> (function(){ const t = localStorage.getItem('theme') || 'dark'; document.documentElement.setAttribute('data-theme', t); })();</script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/projects.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="/#hero">Home</a>
+                <a href="/#projects">Projects</a>
+                <a href="/#experience">Experience</a>
+                <a href="/#education">Education</a>
+            </div>
+            <div class="mobile-menu-toggle transition-smooth" id="mobileMenuToggle">
+                <span class="transition-smooth"></span>
+                <span class="transition-smooth"></span>
+                <span class="transition-smooth"></span>
+            </div>
+            <div class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+                <input type="checkbox" id="theme-checkbox" class="theme-checkbox">
+                <label for="theme-checkbox" class="theme-slider transition-smooth">
+                    <span class="theme-slider-button transition-smooth"></span>
+                </label>
+            </div>
+        </div>
+    </nav>
+    <main id="main-content" class="container page-content" role="main">
+        <a href="/" class="btn btn-secondary back-btn">← Back</a>
+
+        <header class="section hero-compact">
+            <h1>Cloud-Native Intrusion Detection System</h1>
+            <p class="hero-description">Scalable ETL pipeline and real-time inference API processing 2.5M+ records using AWS Glue, Redshift, and ECS Fargate.</p>
+            <div class="case-callout">
+                <strong>TL;DR:</strong> Real-time inference on ECS Fargate; Hive-style date partitioning in S3; PySpark ETL via AWS Glue with Glue Crawlers for schema discovery.
+            </div> 
+            <figure class="project-figure">
+                <img src="/assets/img/cloud-intrusion/project_aws_diagram.drawio2.png" alt="AWS Cloud Architecture Diagram showing flow from S3 to Glue to Redshift to ECS Fargate." loading="eager" decoding="async">
+                <figcaption>Architecture diagram: data flow from ingestion to inference.</figcaption>
+            </figure>
+        </header> 
+
+        <section class="section">
+            <h2 class="subsection-title">System Demo &amp; API Inference</h2>
+            <p>Short demo of the containerized FastAPI inference service running on ECS Fargate. The video shows a Postman request and the model response.</p>
+            <figure class="project-figure">
+                <video controls playsinline preload="metadata" poster="/assets/img/cloud-intrusion/s3_storage.png" class="project-video" aria-label="FastAPI demo video showing inference request and response">
+                    <source src="/assets/img/cloud-intrusion/fastapi_demo.mp4" type="video/mp4">
+                    Your browser does not support the video element. <a href="/assets/img/cloud-intrusion/fastapi_demo.mp4">Download the demo</a>.
+                </video>
+                <figcaption>FastAPI demo: containerized inference on ECS Fargate (use controls to play).</figcaption>
+            </figure>
+        </section>
+
+        <section class="section">
+            <h2 class="subsection-title">Automated Data Ingestion &amp; Transformation</h2>
+            <div class="media-grid two-col">
+                <figure class="project-figure">
+                    <img src="/assets/img/cloud-intrusion/s3_storage.png" alt="Date-partitioned raw data in S3" loading="lazy" decoding="async">
+                    <figcaption>Date-partitioned raw data in S3 (optimized for daily loads ~200MB/day).</figcaption>
+                </figure>
+                <div>
+                    <p>Implemented Hive-style partitioning (date=YYYY-MM-DD) in S3 to enable partition pruning and optimize query performance for daily data loads (~200MB/day). Utilized AWS Glue Crawlers for automated schema discovery to handle data drift, while PySpark ETL scripts orchestrated by AWS Glue clean, normalize, and transform raw PCAP CSV data into a Redshift-ready schema. Jobs are idempotent, versioned, and emit structured job metrics to CloudWatch.</p>
+                    <figure class="project-figure">
+                        <img src="/assets/img/cloud-intrusion/glue_job.png" alt="AWS Glue Job Console showing ETL and Model Training jobs" loading="lazy" decoding="async">
+                        <figcaption>AWS Glue Job Console showing ETL and model training orchestration.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="subsection-title">Production-Grade Inference API</h2>
+            <p>Modular FastAPI app with strict Pydantic validation and separation of concerns between API routes and model inference logic. Serves a Random Forest model trained on flow metadata; models are versioned and served via a lightweight container. Health checks and structured JSON responses make the API production-ready.</p>
+            <figure class="project-figure">
+                <img src="/assets/img/cloud-intrusion/fastapi_code.png" alt="FastAPI codebase showing model_infer.py and routes directory structure" loading="lazy" decoding="async">
+                <figcaption>FastAPI code snapshot: `model_infer.py` and routes layout.</figcaption>
+            </figure>
+        </section>
+
+        <section class="section">
+            <h2 class="subsection-title">Network Security &amp; VPC Configuration</h2>
+            <p>Challenge: Enabling secure private communication between AWS Glue and Redshift without exposing credentials or traffic to public internet.</p>
+            <p>Solution: Utilized VPC Interface and Gateway Endpoints to create a private network tunnel, allowing JDBC database traffic to flow securely between services without traversing the public internet. This architecture isolates data within private subnets and enforces IAM-based role assignments to eliminate the need for hardcoded AWS access keys.</p>
+            <figure class="project-figure">
+                <img src="/assets/img/cloud-intrusion/VPC.png" alt="VPC resource map visualizing subnets and route tables" loading="lazy" decoding="async">
+                <figcaption>VPC resource map highlighting subnets, route tables, and private endpoints.</figcaption>
+            </figure>
+        </section>
+
+        <section class="section meta-section">
+            <h2 class="subsection-title">Additional Details</h2>
+
+            <div class="meta-grid">
+                <div class="meta-block">
+                    <h3>Tech Stack</h3>
+                    <ul class="meta-list">
+                        <li><strong>Languages:</strong> Python, PySpark, SQL</li>
+                        <li><strong>AWS Services:</strong> S3, Glue, Redshift Serverless, ECS Fargate, VPC</li>
+                        <li><strong>Frameworks &amp; Tools:</strong> FastAPI, Docker, Spark MLlib</li>
+                        <li><strong>Ops &amp; Other:</strong> Boto3 (Python SDK), CloudWatch (monitoring), ECR (registry)</li>
+                    </ul>
+                </div>
+
+                <div class="meta-block">
+                    <h3>Credits</h3>
+                    <p>Dataset: <strong>UNSW‑NB15</strong>.</p>
+                    <p>This was a collaborative team project; I worked primarily on setting up the S3 buckets, the Glue infrastructure, and the ETL pipelines.</p>
+                </div>
+            </div>
+        </section> 
+        <footer class="footer full-bleed">
+            <p>&copy; 2025 John He. All rights reserved.</p>
+        </footer>
+    </main>
+    <script src="/js/main.js"></script>
+</body>
+</html>

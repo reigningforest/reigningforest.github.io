@@ -57,19 +57,23 @@ document.addEventListener('DOMContentLoaded', function() {
     function highlightActiveSection() {
         const scrollPosition = window.scrollY + 100; // Offset for navbar
         
+        // Remove active/aria-current from all nav links first
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            link.removeAttribute('aria-current');
+        });
+        
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
             const sectionId = section.getAttribute('id');
             
             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                // Remove active class from all links
-                navLinks.forEach(link => link.classList.remove('active'));
-                
-                // Add active class to current section link
+                // Add active class and aria-current to current section link
                 const activeLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
                 if (activeLink) {
                     activeLink.classList.add('active');
+                    activeLink.setAttribute('aria-current', 'page');
                 }
             }
         });
@@ -182,5 +186,58 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1000);
         }
     }
+});
+
+// Lightweight lightbox for project images
+document.addEventListener('DOMContentLoaded', function() {
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML = '<div class="lightbox-content" role="dialog" aria-modal="true"><button class="lightbox-close" aria-label="Close">×</button><img class="lightbox-img" alt=""/></div>';
+    document.body.appendChild(overlay);
+
+    const imgEl = overlay.querySelector('.lightbox-img');
+    const closeBtn = overlay.querySelector('.lightbox-close');
+
+    function openLightbox(src, alt) {
+        imgEl.src = src;
+        imgEl.alt = alt || '';
+        overlay.classList.add('open');
+        // Prevent background scrolling while open
+        document.body.style.overflow = 'hidden';
+        // Slight delay to ensure transition kick-off then focus close button
+        setTimeout(() => closeBtn.focus(), 120);
+    }
+
+    function closeLightbox() {
+        // Kick off CSS close animation
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+        // Clear src after transition ends to avoid visual snap
+        const cleanup = () => {
+            imgEl.src = '';
+            imgEl.alt = '';
+            overlay.removeEventListener('transitionend', cleanup);
+        };
+        overlay.addEventListener('transitionend', cleanup);
+    }
+
+    // Delegate: attach click handlers to project images
+    document.querySelectorAll('.project-figure img').forEach(img => {
+        img.addEventListener('click', function() {
+            const full = img.dataset.full || img.src;
+            openLightbox(full, img.alt);
+        });
+    });
+
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target.classList.contains('lightbox-close')) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+    });
 });
 

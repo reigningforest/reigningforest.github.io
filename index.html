@@ -6,10 +6,8 @@
     <title>John He Portfolio</title>
     <meta name="description" content="AI Engineer & Data Scientist Portfolio of John He - Specializing in LLM Agents, RAG Systems, and Scalable ETL Pipelines.">
     
-    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
     
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQV60PPMYK"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -18,10 +16,11 @@
         gtag('config', 'G-VQV60PPMYK');
     </script>
     
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <a href="#hero" class="skip-link">Skip to content</a>
+    
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-links">
@@ -44,7 +43,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-content-split">
@@ -55,21 +53,24 @@
                     <p class="hero-description">MS in Machine Learning and Data Science at Northwestern University</p>
                     
                     <div class="hero-links">
-                        <a href="https://github.com/reigningforest" target="_blank" class="btn btn-secondary transition-smooth hover-lift">GitHub</a>
-                        <a href="https://www.linkedin.com/in/jhe1/" target="_blank" class="btn btn-secondary transition-smooth hover-lift">LinkedIn</a>
-                        <a href="https://orcid.org/0009-0002-9787-0426" target="_blank" class="btn btn-secondary transition-smooth hover-lift">OrcId Profile</a>
+                        <a href="https://github.com/reigningforest" target="_blank" rel="noopener noreferrer" class="btn btn-secondary transition-smooth hover-lift">GitHub</a>
+                        <a href="https://www.linkedin.com/in/jhe1/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary transition-smooth hover-lift">LinkedIn</a>
+                        <a href="https://orcid.org/0009-0002-9787-0426" target="_blank" rel="noopener noreferrer" class="btn btn-secondary transition-smooth hover-lift">OrcId Profile</a>
                     </div>
-
-
                 </div>
                 <div class="hero-image-side">
                     <img src="assets/img/logo.jpg" alt="John He" class="profile-image">
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="section" id="projects">
+        <div class="container">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid featured-grid">
                 
-                <a href="https://github.com/reigningforest/rag_article_search" target="_blank" class="project-card-link featured-card">
+                <a href="https://github.com/reigningforest/rag_article_search" target="_blank" rel="noopener noreferrer" class="project-card-link featured-card">
                     <div class="project-card transition-medium">
                         <h3>RAG LLM System for Scientific Literature</h3>
                         <div class="tech-badges">
@@ -85,8 +86,8 @@
                     </div>
                 </a>
 
-                <div class="featured-card">
-                    <div class="project-card transition-medium project-card-static">
+                <a href="/projects/cloud-intrusion.html" class="project-card-link featured-card">
+                    <div class="project-card transition-medium">
                         <h3>Cloud-Based Intrusion Detection System</h3>
                         <div class="tech-badges">
                             <span class="tech-badge">Glue</span>
@@ -94,27 +95,25 @@
                             <span class="tech-badge">Redshift</span>
                             <span class="tech-badge">ECS Fargate</span>
                             <span class="tech-badge">PySpark</span>
+                            <span class="tech-badge">Spark MLlib</span>
                             <span class="tech-badge">VPC</span>
                             <span class="tech-badge">IAM</span>
                             <span class="tech-badge">Docker</span>
                             <span class="tech-badge">FastAPI</span>
                         </div>
                         <p><strong>Overview:</strong> Designed cloud-native data infrastructure processing 2.5M+ network traffic records for intrusion detection.</p>
-                        <p><strong>Key Results:</strong> Implemented raw data storage in S3, automated schema inference and transformations with AWS Glue, and data warehousing in Redshift to prepare data. Glue was also used to train a Random Forest model. AWS ECS Fargate with a containerized FastAPI endpoint was used for deployment.</p>
+                        <p><strong>Key Results:</strong> Implemented Hive-style date partitioning in S3 and used AWS Glue Crawlers for automated schema discovery. PySpark ETL jobs in Glue transformed raw PCAP CSVs into a Redshift-ready schema; a Random Forest classifier was trained as part of the pipeline and served via a containerized FastAPI endpoint on ECS Fargate.</p>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="section" id="projects">
+    <section class="section section-alt" id="more-projects">
         <div class="container">
-
-
-            <h3 class="subsection-title">More Projects</h3>
+            <h2 class="section-title">More Projects</h2>
             <div class="projects-grid">
-                <a href="https://github.com/reigningforest/simple_nlp_answering_system" target="_blank" class="project-card-link">
+                <a href="https://github.com/reigningforest/simple_nlp_answering_system" target="_blank" rel="noopener noreferrer" class="project-card-link">
                     <div class="project-card transition-medium">
                         <h3>Deployed NLP Answering System</h3>
                         <div class="tech-badges">
@@ -127,7 +126,7 @@
                     </div>
                 </a>
 
-                <a href="https://github.com/reigningforest/yfinance_pipeline" target="_blank" class="project-card-link">
+                <a href="https://github.com/reigningforest/yfinance_pipeline" target="_blank" rel="noopener noreferrer" class="project-card-link">
                     <div class="project-card transition-medium">
                         <h3>YFinance Data Pipeline</h3>
                         <div class="tech-badges">
@@ -141,7 +140,7 @@
                     </div>
                 </a>
 
-                <a href="https://github.com/reigningforest/mlds_hackathon_2024_soccer" target="_blank" class="project-card-link">
+                <a href="https://github.com/reigningforest/mlds_hackathon_2024_soccer" target="_blank" rel="noopener noreferrer" class="project-card-link">
                     <div class="project-card transition-medium">
                         <h3>AI-Powered Soccer Analytics</h3>
                         <div class="tech-badges">
@@ -155,7 +154,7 @@
                 </a>
 
                 <div class="project-card transition-medium project-card-static">
-                    <h3>Bank Customer Churn Prediction</h3>
+                    <h3>Bank Customer Churn Prediction <span class="meta-badge" aria-label="Private internal project">🔒 Private</span></h3> 
                     <div class="tech-badges">
                         <span class="tech-badge">Pytorch</span>
                         <span class="tech-badge">scikit-learn</span>
@@ -169,7 +168,7 @@
                 </div>
 
                 <div class="project-card transition-medium project-card-static">
-                    <h3>Market Sales Forecasting</h3>
+                    <h3>Market Sales Forecasting <span class="meta-badge" aria-label="Private internal project">🔒 Private</span></h3>
                     <div class="tech-badges">
                         <span class="tech-badge">ARIMA</span>
                         <span class="tech-badge">PostgreSQL</span>
@@ -177,17 +176,14 @@
                     <p><strong>Key Results:</strong> Forecasted sales for top 10 departments, identifying those with >90% projected ROI to guide strategic investment.</p>
                 </div>
             </div>
-            </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section class="section section-alt" id="experience">
+    <section class="section" id="experience">
         <div class="container">
             <h2 class="section-title">Work Experience</h2>
             <div class="timeline-container">
                 
-                <!-- Videspan -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content transition-smooth">
@@ -207,7 +203,6 @@
                     </div>
                 </div>
 
-                <!-- Monopar -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content transition-smooth">
@@ -226,7 +221,6 @@
                     </div>
                 </div>
 
-                <!-- Alexion -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content transition-smooth">
@@ -246,7 +240,6 @@
                     </div>
                 </div>
 
-                <!-- Azul 3D -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content transition-smooth">
@@ -265,7 +258,6 @@
                     </div>
                 </div>
 
-                <!-- Brigham -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content transition-smooth">
@@ -284,49 +276,49 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <div class="container">
-        <h3 class="subsection-title">Skills</h3>
-        <div class="tech-stack-bar">
-            <div class="tech-category">
-                <span class="tech-label">Programming</span>
-                <span class="tech-pill">Python</span>
-                <span class="tech-pill">R</span>
-                <span class="tech-pill">SQL</span>
-            </div>
-            <div class="tech-category">
-                <span class="tech-label">AI / ML &amp; LLMs</span>
-                <span class="tech-pill">PyTorch</span>
-                <span class="tech-pill">HuggingFace</span>
-                <span class="tech-pill">LangChain</span>
-                <span class="tech-pill">LangGraph</span>
-                <span class="tech-pill">scikit-learn</span>
-                <span class="tech-pill">RAG</span>
-            </div>
-            <div class="tech-category">
-                <span class="tech-label">Cloud &amp; Data Eng</span>
-                <span class="tech-pill">AWS Glue</span>
-                <span class="tech-pill">Redshift</span>
-                <span class="tech-pill">S3</span>
-                <span class="tech-pill">Spark</span>
-                <span class="tech-pill">Snowflake</span>
-            </div>
-            <div class="tech-category">
-                <span class="tech-label">MLOps &amp; Tools</span>
-                <span class="tech-pill">Docker</span>
-                <span class="tech-pill">FastAPI</span>
-                <span class="tech-pill">Streamlit</span>
-                <span class="tech-pill">dbt</span>
-                <span class="tech-pill">Fivetran</span>
-                <span class="tech-pill">ECS Fargate</span>
+    <section class="section section-alt" id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="tech-stack-bar">
+                <div class="tech-category">
+                    <span class="tech-label">Programming</span>
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">R</span>
+                    <span class="tech-pill">SQL</span>
+                </div>
+                <div class="tech-category">
+                    <span class="tech-label">AI / ML &amp; LLMs</span>
+                    <span class="tech-pill">PyTorch</span>
+                    <span class="tech-pill">HuggingFace</span>
+                    <span class="tech-pill">LangChain</span>
+                    <span class="tech-pill">LangGraph</span>
+                    <span class="tech-pill">scikit-learn</span>
+                    <span class="tech-pill">RAG</span>
+                </div>
+                <div class="tech-category">
+                    <span class="tech-label">Cloud &amp; Data Eng</span>
+                    <span class="tech-pill">AWS Glue</span>
+                    <span class="tech-pill">Redshift</span>
+                    <span class="tech-pill">S3</span>
+                    <span class="tech-pill">Spark</span>
+                    <span class="tech-pill">Snowflake</span>
+                </div>
+                <div class="tech-category">
+                    <span class="tech-label">MLOps &amp; Tools</span>
+                    <span class="tech-pill">Docker</span>
+                    <span class="tech-pill">FastAPI</span>
+                    <span class="tech-pill">Streamlit</span>
+                    <span class="tech-pill">dbt</span>
+                    <span class="tech-pill">Fivetran</span>
+                    <span class="tech-pill">ECS Fargate</span>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <section class="section" id="education">
         <div class="container">
@@ -344,13 +336,12 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 John He. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>

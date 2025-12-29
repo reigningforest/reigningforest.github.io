@@ -1,0 +1,146 @@
+/* -------------------------------------------------------------------
+   PROJECT DETAILS & CASE STUDY STYLES
+   (Additions specific to individual project pages like cloud-intrusion.html)
+------------------------------------------------------------------- */
+
+/* 1. COMPACT HERO (Used on project pages) */
+.hero-compact .hero-description {
+  max-width: 700px; /* Optional: slightly wider for project intros */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.hero-compact h1 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px; /* Prevents it from getting too wide on huge screens */
+  margin-bottom: var(--space-md); /* Ensures consistent spacing above the description */
+}
+
+/* 2. MEDIA & FIGURES */
+.project-figure {
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.project-figure img,
+.project-figure video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px var(--shadow);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.project-figure img:hover,
+.project-figure video:hover {
+  transform: scale(1.01); /* Subtle zoom */
+}
+
+.project-figure figcaption {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 0.6rem;
+  text-align: center;
+}
+
+.project-figure img { cursor: zoom-in; }
+
+/* Video styling */
+.project-video {
+  max-height: 600px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Two-column media grid (Text + Image side by side) */
+.media-grid.two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .media-grid.two-col {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* 3. METADATA & SIDEBARS */
+/* Internal "Private" Badge */
+.meta-badge {
+  display: inline-block;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+  border: 1px solid var(--border-color);
+  vertical-align: middle;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Additional Details Section */
+.meta-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  align-items: start;
+}
+
+.meta-block h3 { margin-bottom: var(--space-xs); font-size: 0.95rem; }
+.meta-list { list-style: none; padding: 0; margin: 0; }
+.meta-list li { margin-bottom: var(--space-xs); color: var(--text-secondary); }
+
+/* TL;DR Callout Box */
+.case-callout {
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(74,158,255,0.06), transparent);
+  border: 1px solid rgba(74,158,255,0.08);
+  margin-bottom: var(--space-md);
+  color: var(--text-primary);
+  text-align: left;
+}
+
+/* 4. LIGHTBOX OVERLAY */
+.lightbox-overlay {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.8);
+  z-index: 2000; padding: var(--space-xl);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 320ms ease, visibility 320ms ease;
+}
+.lightbox-overlay.open { opacity: 1; visibility: visible; pointer-events: auto; }
+
+.lightbox-content {
+  max-width: 95%; max-height: 95%;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  transform: scale(.98);
+  transition: transform 320ms ease;
+}
+.lightbox-overlay.open .lightbox-content { transform: scale(1); }
+
+.lightbox-img {
+  max-width: 100%; max-height: 100%;
+  border-radius: 6px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.lightbox-close {
+  position: absolute; top: -1.5rem; right: -1.5rem;
+  background: rgba(0,0,0,0.6); color: white;
+  border: none; border-radius: 50%;
+  width: 40px; height: 40px;
+  font-size: 1.25rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.lightbox-close:hover { background: rgba(0,0,0,0.9); }
