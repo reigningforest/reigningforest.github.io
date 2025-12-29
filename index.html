@@ -60,51 +60,12 @@
                         <a href="https://orcid.org/0009-0002-9787-0426" target="_blank" class="btn btn-secondary transition-smooth hover-lift">OrcId Profile</a>
                     </div>
 
-                    <div class="tech-stack-bar">
-                        <div class="tech-category">
-                            <span class="tech-label">Programming</span>
-                            <span class="tech-pill">Python</span>
-                            <span class="tech-pill">R</span>
-                            <span class="tech-pill">SQL</span>
-                        </div>
-                        <div class="tech-category">
-                            <span class="tech-label">AI / ML &amp; LLMs</span>
-                            <span class="tech-pill">PyTorch</span>
-                            <span class="tech-pill">HuggingFace</span>
-                            <span class="tech-pill">LangChain</span>
-                            <span class="tech-pill">LangGraph</span>
-                            <span class="tech-pill">scikit-learn</span>
-                            <span class="tech-pill">RAG</span>
-                        </div>
-                        <div class="tech-category">
-                            <span class="tech-label">Cloud &amp; Data Eng</span>
-                            <span class="tech-pill">AWS Glue</span>
-                            <span class="tech-pill">Redshift</span>
-                            <span class="tech-pill">S3</span>
-                            <span class="tech-pill">Spark</span>
-                            <span class="tech-pill">Snowflake</span>
-                        </div>
-                        <div class="tech-category">
-                            <span class="tech-label">MLOps &amp; Tools</span>
-                            <span class="tech-pill">Docker</span>
-                            <span class="tech-pill">FastAPI</span>
-                            <span class="tech-pill">Streamlit</span>
-                            <span class="tech-pill">dbt</span>
-                            <span class="tech-pill">Fivetran</span>
-                            <span class="tech-pill">ECS Fargate</span>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="hero-image-side">
                     <img src="assets/img/logo.jpg" alt="John He" class="profile-image">
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="section" id="projects">
-        <div class="container">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid featured-grid">
                 
@@ -120,7 +81,7 @@
                             <span class="tech-badge">Streamlit</span>
                         </div>
                         <p><strong>Overview:</strong> Built an agentic RAG system over 800,000+ arXiv abstracts with query classification and semantic search.</p>
-                        <p><strong>Key Results:</strong> Fine-tuned a 1.8B parameter LLM to simplify abstracts and deployed a Streamlit app for real-time research synthesis.</p>
+                        <p><strong>Key Results:</strong> Query classification routes to either direct answer or RAG-enhanced answer. RAG-enhanced answer involves a query rewritter, document retrieval, and answer generation. Abstracts are also returned, with a fine-tuned a 1.8B parameter LLM abstract simplifier for explaining technical jargon. All deployed to a Streamlit app for chatbot interaction.</p>
                     </div>
                 </a>
 
@@ -143,12 +104,19 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+
 
             <h3 class="subsection-title">More Projects</h3>
             <div class="projects-grid">
                 <a href="https://github.com/reigningforest/simple_nlp_answering_system" target="_blank" class="project-card-link">
                     <div class="project-card transition-medium">
-                        <h3>Simple NLP Answering System</h3>
+                        <h3>Deployed NLP Answering System</h3>
                         <div class="tech-badges">
                             <span class="tech-badge">Grok</span>
                             <span class="tech-badge">Pinecone</span>
@@ -322,6 +290,44 @@
     </section>
 
     <!-- Education Section -->
+    <div class="container">
+        <h3 class="subsection-title">Skills</h3>
+        <div class="tech-stack-bar">
+            <div class="tech-category">
+                <span class="tech-label">Programming</span>
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">R</span>
+                <span class="tech-pill">SQL</span>
+            </div>
+            <div class="tech-category">
+                <span class="tech-label">AI / ML &amp; LLMs</span>
+                <span class="tech-pill">PyTorch</span>
+                <span class="tech-pill">HuggingFace</span>
+                <span class="tech-pill">LangChain</span>
+                <span class="tech-pill">LangGraph</span>
+                <span class="tech-pill">scikit-learn</span>
+                <span class="tech-pill">RAG</span>
+            </div>
+            <div class="tech-category">
+                <span class="tech-label">Cloud &amp; Data Eng</span>
+                <span class="tech-pill">AWS Glue</span>
+                <span class="tech-pill">Redshift</span>
+                <span class="tech-pill">S3</span>
+                <span class="tech-pill">Spark</span>
+                <span class="tech-pill">Snowflake</span>
+            </div>
+            <div class="tech-category">
+                <span class="tech-label">MLOps &amp; Tools</span>
+                <span class="tech-pill">Docker</span>
+                <span class="tech-pill">FastAPI</span>
+                <span class="tech-pill">Streamlit</span>
+                <span class="tech-pill">dbt</span>
+                <span class="tech-pill">Fivetran</span>
+                <span class="tech-pill">ECS Fargate</span>
+            </div>
+        </div>
+    </div>
+
     <section class="section" id="education">
         <div class="container">
             <h2 class="section-title">Education</h2>

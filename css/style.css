@@ -64,7 +64,7 @@ body {
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem; /* slightly reduced side padding */
 }
 
 /* Navigation */
@@ -86,7 +86,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 48px; /* reduced header height */
 }
 
 .nav-links {
@@ -151,7 +151,7 @@ body {
 .nav-links.mobile-open {
   display: flex;
   position: absolute;
-  top: 70px;
+  top: 48px;
   left: 0;
   width: 100%;
   background-color: var(--bg-primary);
@@ -233,10 +233,11 @@ body {
 
 /* Hero Section */
 .hero {
-  min-height: 100vh;
+  min-height: 115vh; /* increased vertical space */
   display: flex;
   align-items: center;
-  padding-top: 70px;
+  padding-top: 48px; /* adjust for thinner header */
+  padding-bottom: 60px; /* extra space to avoid condensed feel */
   background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 
@@ -355,7 +356,7 @@ body {
 /* Buttons */
 .btn {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 10px 20px; /* reduced button padding */
   text-decoration: none;
   border-radius: 6px;
   font-weight: 600;
@@ -384,7 +385,7 @@ body {
 
 /* Sections */
 .section {
-  padding: 60px 0;
+  padding: 40px 0; /* reduced vertical padding for tighter layout */
 }
 
 .section-alt {
@@ -423,7 +424,7 @@ body {
 
 .education-item {
   background: var(--bg-primary);
-  padding: 2rem;
+  padding: 1.5rem; /* reduced padding to match condensed sections */
   border-radius: 12px;
   box-shadow: 0 5px 15px var(--shadow);
   border: 1px solid var(--border-color);
@@ -659,7 +660,7 @@ body {
 
 .project-card {
   background: var(--bg-primary);
-  padding: 2rem;
+  padding: 1.5rem; /* slightly reduced internal padding */
   border-radius: 12px;
   box-shadow: 0 5px 15px var(--shadow);
   border: 1px solid var(--border-color);
