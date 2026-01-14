@@ -1,57 +1,90 @@
-# Data Scientist
-Check out some of the research I was part of: [My OrcId Profile](https://orcid.org/0009-0002-9787-0426)
+# John He | AI Engineer & Data Scientist
 
+**Contact:** (603) 667-3454 | Evanston, IL | [johnhe@u.northwestern.edu](mailto:johnhe@u.northwestern.edu)  
+**Links:** [LinkedIn](https://www.linkedin.com/in/jhe1/) | [GitHub](https://github.com/reigningforest) | [OrcId Profile](https://orcid.org/0009-0002-9787-0426) | [Portfolio](https://reigningforest.github.io)
 
 ## About Me
-- I am at Alexion, the Rare Disease Unit of AstraZeneca, as a Data Intern.
-- I am a Machine Learning and Data Science graduate student at Northwestern University, expected to graduate in December 2025.
-- I worked for 3 years at Brigham and Women's Hospital (BWH) / Dana Farber Cancer Institute (DFCI) in Radiation Oncology research
-- I have a Bachelor of Arts in Molecular Biology and Biochemistry from Middlebury College.
+I'm an AI Engineer and Data Scientist with a focus on building scalable systems combining LLM agents, RAG pipelines, and cloud-native data infrastructure. I graduated from Northwestern University's MS in Machine Learning and Data Science program (Dec 2025) and have 3+ years of experience at leading organizations including Brigham and Women's Hospital, AstraZeneca, and early-stage biotech companies.
 
+---
 
 ## Education
-- MS in Machine Learning and Data Science - Northwestern University (GPA: 3.98)
-- BA in Molecular Biology and Biochemistry - Middlebury College (magna cum laude, GPA: 3.64)
+- **MS in Machine Learning and Data Science** — Northwestern University, Evanston, IL
+- **BA in Molecular Biology and Biochemistry** — Middlebury College, Middlebury, VT (magna cum laude)
 
+---
 
 ## Work Experience
-### Real World Science Data Intern at Alexion, AstraZeneca
-- Leveraging the power of LLMs to automate some manual, text-heavy processes.
 
-### Data Coordinator at BWH/DFCI
-- Developed ETL workflows using R and Python to provide data efficiently to researchers, reducing data retrieval time from weeks to days.
-- Conducted survival analyses using Cox Proportional Hazards models to assist physicians in research reports.
-- Created a Python web scraper collecting 10,000+ facial images for ML model testing.
+### Data Science Contractor (Capstone) | Videspan | Sep 2025 - Dec 2025
+*Evanston, IL*
+- Deployed an agentic chatbot POC (Docker, FastAPI) using open-source LLMs (Qwen3) to reliably automate answers for 20 complex user scenarios where no training data existed, establishing the project's first foundational benchmarks.
+- Implemented the agent's core logic using the Model Context Protocol (MCP) to execute multistep tool calls, creating active elicitation loops to efficiently clarify ambiguous questions for ClickHouse database queries.
+- Integrated a multimodal RAG pipeline (Qwen3-VL) to process instructional videos, utilizing LanceDB for vector storage to transform unstructured media into a searchable knowledge base.
 
+### Data Science Intern (Biostatistics) | Monopar Therapeutics | Sep 2025 - Nov 2025
+*Wilmette, IL*
+- Constructed predictive models using Causal Inference and Survival Analysis (Kaplan-Meier, Cox PH, GLMMs) to investigate biomarker relationships and establish statistically significant health indicators for patient stratification.
 
-## Projects
-### [Article Querying using RAG-based LLMs](https://github.com/reigningforest/rag_article_search)
-- **Overview**: Used an Agentic AI structure to explore the interaction between RAG and LLMs in the context of Article searches.
-- **Tools**: Python
-- **Key Results**: While this does work, I hope to make queries more accurate in the future.
+### Data Science Intern (Large Language Models) | Alexion, AstraZeneca Rare Disease | Jun 2025 - Aug 2025
+*Wilmington, DE*
+- Architected an LLM pipeline using Langchain to accelerate literature review writing by cutting article review time from 30 to 3 minutes, working with 2 researchers to identify relevant research articles and extract 20+ variables.
+- Engineered a scalable, end-to-end data pipeline on a Slurm-managed HPC cluster to ingest and process 300+ scientific articles, designing a flexible data model that transformed XML into a structured, analysis-ready format.
+- Resolved a failing few-shot learning LLM classifier by visualizing text embeddings with t-SNE, diagnosing the root cause as inconsistent data labeling and informing the creation of a new SOP for 10+ categories.
+- Delivered 5 tailored presentations (four technical deep-dives, one executive summary to the department VP), resulting in an adoption request from the BioPharmaceuticals Medical Evidence department's Real World Data Office.
 
-### [MLDS Hackathon 2024 - Soccer Analytics](https://github.com/reigningforest/CoxPH_Analysis_Simple)
-- **Overview**: Participated in the program's annual 48 hour hackathon
-- **Tools**: Python
-- **Key Results**: Worked in a team of 4 to create initial lineup selection (random forest), player substitutions (collaborative filtering), and general recommendations (ChatGpt wrapper)
+### Data Science Contractor (Industry Practicum) | Azul 3D | Sep 2024 - Jun 2025
+*Skokie, IL*
+- Led a 3-person team to analyze 50+ material compositions, building a predictive framework using Non-linear Regression and Random Forests to forecast reaction speeds and optimize manufacturing process precision.
 
-### [Video Game Analysis - In Progress](https://github.com/reigningforest/steam_analysis)
-- **Overview**: Looking at trends in Steam's video game data
-- **Tools**: Python
-- **Key Results**: Currently working on this!
+### Data Coordinator (Data Engineer) | Brigham and Women's Hospital, Radiation Oncology | Sep 2021 - Mar 2025
+*Boston, MA*
+- Overhauled the research data infrastructure with 10+ automated ETL pipelines, doubling accessible data volume and cutting project setup time from months to weeks for 5+ research teams.
+- Designed a high-throughput text extraction pipeline to parse 15GB+ of clinical notes, utilizing complex regular expressions to mine key clinical attributes and generate precision oncology patient cohorts.
 
-### [Celebrity Image Webscraper](https://github.com/reigningforest/Celebrity_Image_Scraper)
-- **Overview**: Extracted Images from Wikimedia Commons
-- **Tools**: Python
-- **Key Results**: Assembled a database of images
+---
 
-### [Automated Cox Proportional Hazards Analysis](https://github.com/reigningforest/CoxPH_Analysis_Simple)
-- **Overview**: Automated univariate and multivariate analysis Cox PH Analyses across covariates
-- **Tools**: R
-- **Key Results**: Used significant covariates from univariate analyses for multivariate analyses
+## Featured Projects
 
-### [R Data Manipulation Tutorial](https://github.com/reigningforest/R_data_tutorial)
-- **Overview**: Provides an overview of R functions for data manipulation
-- **Tools**: R
-- **Key Results**: Was used to help coworkers who wanted to get better at working with data in their projects/studies
+### [RAG LLM System for Scientific Literature](https://github.com/reigningforest/rag_article_search)
+- Developed an agentic RAG system using Langgraph over 800,000+ arXiv abstracts, featuring a query classification step to dynamically route requests and semantic search with Pinecone to optimize retrieval precision.
+- Fine-tuned a 1.8B parameter LLM with LoRA on a custom dataset of scientific text to create a novel abstract simplification feature to improve research accessibility for end-users.
+- **Tech:** LangGraph, Pinecone, LoRA, Gemini API, HuggingFace, Streamlit
+
+### [Cloud-Based Intrusion Detection System](/projects/cloud-intrusion.html)
+- Provisioned a secure, cloud-native data architecture in AWS, utilizing S3 for date-partitioned storage, Glue Crawlers for schema automation, and Redshift Serverless within a VPC.
+- Orchestrated a scalable ETL pipeline using AWS Glue and PySpark to process and transform 2.5M+ network traffic records, delivering a structured dataset to power a real-time Random Forest intrusion detection model.
+- **Tech:** AWS Glue, S3, Redshift, ECS Fargate, PySpark, Spark MLlib, Docker, FastAPI
+
+### [Bank Customer Churn Prediction](https://github.com/reigningforest)
+- Benchmarked 5 ML models (Random Forest, XGBoost, LightGBM, Neural Network, Logistic Regression) on 165K customer records, achieving 86%+ accuracy through systematic hyperparameter tuning and 5-fold cross-validation.
+- Strategically tuned the LightGBM model's decision threshold to prioritize customer retention, boosting the identification of at-risk customers from 55% to 75% recall.
+- **Tech:** PyTorch, scikit-learn, XGBoost, LightGBM
+
+### [AI-Powered Soccer Analytics](https://github.com/reigningforest/mlds_hackathon_2024_soccer)
+- Led 3-person team to deliver 3 analytics tools (lineup predictor, synergy finder, tactical chatbot) in a 48-hour MLDS Hackathon.
+- **Tech:** scikit-learn, Random Forest, Collaborative Filtering, ChatGPT
+
+### [YFinance Data Pipeline](https://github.com/reigningforest/yfinance_pipeline)
+- Automated data pipeline for fetching and processing financial data: Fivetran (extract), Snowflake (load), dbt (transform), Streamlit (visualize).
+- **Tech:** Fivetran, Snowflake, dbt, Streamlit, Plotly
+
+---
+
+## Technical Skills
+
+**Languages & Frameworks:**  
+Python (PyTorch, TensorFlow, PySpark, Scikit-learn, SciPy, statsmodels, LangGraph, LangChain, MCP, Websockets, Ollama, OpenAI, SQLAlchemy, OpenCV), R, SQL
+
+**Cloud & Data Engineering:**  
+AWS (S3, Glue, Lambda, Redshift, IAM), Hadoop, Spark, Snowflake, dbt, Fivetran, Airflow
+
+**AI / ML & LLMs:**  
+LangGraph, LangChain, Model Context Protocol (MCP), LoRA fine-tuning, RAG systems, Pinecone, HuggingFace
+
+**DevOps & Deployment:**  
+Docker, FastAPI, Streamlit, ECS Fargate, Railway
+
+**Analytics & Visualization:**  
+Tableau, Git, Jupyter
 
