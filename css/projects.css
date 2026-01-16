@@ -71,21 +71,6 @@
 }
 
 /* 3. METADATA & SIDEBARS */
-/* Internal "Private" Badge */
-.meta-badge {
-  display: inline-block;
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-  padding: 2px 8px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  margin-left: 0.5rem;
-  border: 1px solid var(--border-color);
-  vertical-align: middle;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
 /* Additional Details Section */
 .meta-grid {
   display: grid;

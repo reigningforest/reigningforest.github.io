@@ -66,6 +66,50 @@ body {
 .transition-medium { transition: all 0.4s ease; }
 .hover-lift:hover { transform: translateY(-2px); box-shadow: 0 5px 15px var(--shadow-hover); }
 
+/* Inline link icons for cards */
+.link-icon {
+  font-size: 1rem;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+  opacity: 0.85;
+}
+.icon-github { color: var(--accent-primary); display: inline-flex; }
+.icon-github svg { width: 1em; height: 1em; fill: currentColor; }
+.icon-page { color: var(--text-secondary); display: inline-flex; }
+.icon-page svg { width: 1em; height: 1em; fill: currentColor; }
+
+/* Visually hidden text for accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Scroll to top button (moved from inline JS styles) */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
 /* -------------------------------------------------------------------
    3. LAYOUT & CONTAINERS
 ------------------------------------------------------------------- */
@@ -405,6 +449,12 @@ body {
   left: 1rem; top: calc(var(--header-height) + 0.5rem); width: auto;
   padding: var(--space-xs) var(--space-md); background: var(--accent-primary);
   color: #fff; border-radius: 4px; z-index: 1100; text-decoration: none;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto; }
 }
 
 /* -------------------------------------------------------------------
