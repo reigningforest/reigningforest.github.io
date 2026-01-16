@@ -21,14 +21,17 @@
 
 /* 2. MEDIA & FIGURES */
 .project-figure {
-  margin: 0 0 var(--space-sm) 0;
+  margin: 0 auto var(--space-sm) auto;
+  text-align: center;
 }
 
 .project-figure img,
 .project-figure video {
-  width: 100%;
+  max-width: 100%;
+  width: auto;
   height: auto;
   display: block;
+  margin: 0 auto;
   border-radius: 6px;
   box-shadow: 0 8px 24px var(--shadow);
   transition: transform .25s ease, box-shadow .25s ease;
@@ -51,8 +54,9 @@
 /* Video styling */
 .project-video {
   max-height: 600px;
-  width: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
 }
 
 /* Two-column media grid (Text + Image side by side) */
@@ -94,6 +98,36 @@
   text-align: left;
 }
 
+/* Content Lists */
+.section ul {
+  margin: var(--space-md) 0;
+  padding-left: var(--space-xl);
+  list-style-type: disc;
+}
+
+.section ul li {
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.section ul li strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.media-grid ul {
+  margin: var(--space-md) 0;
+  padding-left: var(--space-xl);
+  list-style-type: disc;
+}
+
+.media-grid ul li {
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
 /* 4. LIGHTBOX OVERLAY */
 .lightbox-overlay {
   position: fixed; inset: 0;
@@ -129,3 +163,82 @@
   display: flex; align-items: center; justify-content: center;
 }
 .lightbox-close:hover { background: rgba(0,0,0,0.9); }
+
+/* 5. CODE BLOCKS */
+.code-block-container {
+  margin: var(--space-lg) 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.code-block-container pre {
+  margin: 0;
+  padding: var(--space-lg);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  overflow-x: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.code-block-container code {
+  color: var(--text-primary);
+  background: transparent;
+  font-family: inherit;
+}
+
+/* 6. TABLES */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin: var(--space-lg) 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-primary);
+  font-size: 0.95rem;
+}
+
+.project-table thead {
+  background: var(--accent-primary);
+  color: white;
+}
+
+.project-table th {
+  padding: var(--space-md);
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.project-table td {
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.project-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.project-table tbody tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+.project-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-responsive .caption {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: var(--space-sm);
+  font-style: italic;
+}

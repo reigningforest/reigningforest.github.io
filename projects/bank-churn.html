@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Bank Customer Churn Prediction — John He</title>
+    <meta name="description" content="Predicting customer churn using LightGBM, XGBoost, and Neural Networks to drive retention strategies.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+    <script> (function(){ const t = localStorage.getItem('theme') || 'dark'; document.documentElement.setAttribute('data-theme', t); })();</script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/projects.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="/#hero">Home</a>
+                <a href="/#projects">Projects</a>
+                <a href="/#experience">Experience</a>
+                <a href="/#education">Education</a>
+            </div>
+            <div class="mobile-menu-toggle transition-smooth" id="mobileMenuToggle">
+                <span class="transition-smooth"></span>
+                <span class="transition-smooth"></span>
+                <span class="transition-smooth"></span>
+            </div>
+            <div class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+                <input type="checkbox" id="theme-checkbox" class="theme-checkbox">
+                <label for="theme-checkbox" class="theme-slider transition-smooth">
+                    <span class="theme-slider-button transition-smooth"></span>
+                </label>
+            </div>
+        </div>
+    </nav>
+    <main id="main-content" class="container page-content" role="main">
+        <a href="/#projects" class="btn btn-secondary back-btn">← Back</a>
+
+        <header class="section hero-compact">
+            <h1>Bank Customer Churn Prediction</h1>
+            <p class="hero-description">Comparative analysis of machine learning models to identify at-risk customers and optimize retention strategies.</p>
+            <div class="case-callout">
+                <strong>TL;DR:</strong> LightGBM outperformed Logistic Regression, Random Forest, XGBoost, and Neural Networks with 86.54% accuracy. Threshold tuning boosted recall from 55% to 75% to capture high-value at-risk customers.
+            </div> 
+            <figure class="project-figure">
+                <img src="/assets/img/bank-churn/figure1_variable_distribution.png" alt="Distribution of Numerical Variables showing histograms for CreditScore, Age, Tenure, and Balance." loading="eager" decoding="async">
+                <figcaption>Figure 1: Distribution of key numerical variables showing skewness in Age and Salary.</figcaption>
+            </figure>
+        </header> 
+
+        <section class="section">
+            <h2 class="subsection-title">Executive Summary</h2>
+            <p>Customer retention is a critical priority for financial institutions, as churn directly impacts long-term growth and revenue. This project evaluated five supervised machine learning models to predict customer churn using a dataset of 165,000 banking records.</p>
+            <p><strong>Key Results:</strong> LightGBM emerged as the strongest model, achieving the highest Test Accuracy (86.54%) and AUC (0.8896). While the default model prioritized precision, a strategic adjustment to the decision threshold (0.25) significantly improved the identification of churners (Recall increased to 75%), allowing for more effective resource allocation in retention campaigns.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="subsection-title">Exploratory Data Analysis (EDA)</h2>
+            <p>The dataset showed a moderate class imbalance, with 21% of customers having churned and 79% remaining. We identified several critical patterns during the analysis:</p>
+            <ul>
+                <li><strong>The "Zero Balance" Anomaly:</strong> 54% of customers had a zero balance. Alarmingly, 83% of these zero-balance customers churned, compared to only 73% of non-zero balance customers.</li>
+                <li><strong>Geographic Disparities:</strong> 72% of zero-balance members resided in France, while the majority of non-zero balance members were from Germany.</li>
+                <li><strong>Age Factor:</strong> The age distribution was right-skewed (mean 38), and Age later proved to be a critical driver of churn behavior.</li>
+            </ul>
+            <figure class="project-figure">
+                <img src="/assets/img/bank-churn/figure3_zero_vs_nonzero.png" alt="Comparison of distributions between Zero Balance and Non-Zero Balance customers" loading="lazy" decoding="async">
+                <figcaption>Figure 3: Distinct behavioral patterns observed between Zero Balance and Non-Zero Balance customers.</figcaption>
+            </figure>
+        </section>
+
+        <section class="section">
+            <h2 class="subsection-title">Model Performance & Comparisons</h2>
+            <p>We implemented and optimized five distinct models: Logistic Regression, Random Forest, XGBoost, LightGBM, and a Neural Network. All numerical features were standardized, and categorical features were one-hot encoded.</p>
+            
+            <h3>1. Logistic Regression (Baseline)</h3>
+            <p>The baseline model achieved a test accuracy of 85.51%. Feature selection attempts using ANOVA and Lasso did not yield significant improvements, confirming that the baseline configuration was robust. Feature importance analysis highlighted Age and Location (Germany) as top predictors.</p>
+
+            <h3>2. Random Forest & XGBoost</h3>
+            <p>Random Forest optimization revealed that performance stabilized after 100 trees. The optimized model (400 trees, max depth 10) achieved 86.51% accuracy. XGBoost delivered the highest F1-score (63.54%) despite a lower cross-validation accuracy, demonstrating strong capability in handling class imbalance.</p>
+
+            <h3>3. LightGBM (Best Performer)</h3>
+            <p>LightGBM was the overall strongest performer. Optimized via 5-fold cross-validation, it achieved the highest AUC (0.8896) and Test Accuracy (86.54%).</p>
+
+            <h3>4. Neural Network</h3>
+            <p>The Neural Network utilized a sequential architecture with 3 hidden layers (64-32-16 nodes), incorporating batch normalization and dropout to prevent overfitting. It achieved competitive accuracy (86.45%) but slightly lower recall than tree-based methods. Training was monitored with early stopping to ensure optimal convergence.</p>
+            
+            <div class="media-grid two-col">
+                <div class="code-block-container">
+                    <pre><code class="language-python"># Neural Network Architecture used for classification
+model = Sequential([
+    Input(shape=(X_train.shape[1],)),
+    
+    Dense(64, activation='relu', kernel_regularizer=l2(0.001)),
+    BatchNormalization(),
+    
+    Dense(32, activation='relu', kernel_regularizer=l2(0.001)),
+    BatchNormalization(),
+    
+    Dense(16, activation='relu', kernel_regularizer=l2(0.001)),
+    BatchNormalization(),
+    
+    Dense(1, activation='sigmoid')
+])</code></pre>
+                </div>
+                <figure class="project-figure">
+                    <img src="/assets/img/bank-churn/figure7_nn_loss_accuracy.png" alt="Training and Validation loss curves showing convergence." loading="lazy" decoding="async">
+                    <figcaption>Figure 7: Training vs. Validation Loss/Accuracy curves demonstrating model stability.</figcaption>
+                </figure>
+            </div>
+
+            <h3>Performance Summary</h3>
+            <div class="table-responsive">
+                <table class="project-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Test Accuracy</th>
+                            <th>F1-Score</th>
+                            <th>AUC</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Logistic Regression</td>
+                            <td>85.51%</td>
+                            <td>59.96%</td>
+                            <td>0.8697</td>
+                        </tr>
+                        <tr>
+                            <td>Random Forest</td>
+                            <td>86.51%</td>
+                            <td>62.07%</td>
+                            <td>0.8892</td>
+                        </tr>
+                        <tr>
+                            <td>Neural Network</td>
+                            <td>86.45%</td>
+                            <td>62.93%</td>
+                            <td>0.8879</td>
+                        </tr>
+                        <tr>
+                            <td><strong>LightGBM</strong></td>
+                            <td><strong>86.54%</strong></td>
+                            <td>63.44%</td>
+                            <td><strong>0.8896</strong></td>
+                        </tr>
+                        <tr>
+                            <td>XGBoost</td>
+                            <td>84.28%</td>
+                            <td><strong>63.54%</strong></td>
+                            <td>0.8842</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="caption">Table 4: Summary of Model Performance.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="subsection-title">Feature Importance & Key Drivers</h2>
+            <div class="media-grid two-col">
+                <div>
+                    <p>Understanding <em>why</em> customers leave is just as important as predicting <em>who</em> will leave. We analyzed feature importance across Logistic Regression, Random Forest, and LightGBM models, finding consistent patterns in customer behavior.</p>
+                    <p><strong>Key Findings:</strong></p>
+                    <ul>
+                        <li><strong>Age is Critical:</strong> Age consistently emerged as the dominant predictor across all models, suggesting older customers are more likely to churn.</li>
+                        <li><strong>Financial Metrics Matter:</strong> Balance and Estimated Salary were top predictors in the Random Forest and LightGBM models.</li>
+                        <li><strong>Product Usage:</strong> The number of bank products held was a strong influence in the Logistic Regression and LightGBM models.</li>
+                    </ul>
+                </div>
+                <figure class="project-figure">
+                    <img src="/assets/img/bank-churn/figure9_lightgbm_feature_importance.png" alt="LightGBM Feature Importance Chart showing Age, Balance, and Salary as top predictors" loading="lazy" decoding="async">
+                    <figcaption>Figure 9: Feature Importance from the best-performing LightGBM model. Age is the most significant factor.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="subsection-title">Business Insights & Retention Strategy</h2>
+            <p>While LightGBM had high accuracy, its initial recall was only 55.21%, meaning it missed nearly half of the actual churners. From a business perspective, missing a churner is more costly than falsely flagging a loyal customer.</p>
+            
+            <div class="media-grid two-col">
+                <div>
+                    <h3>Strategic Threshold Tuning</h3>
+                    <p>We lowered the classification threshold to <strong>0.25</strong>. This strategic adjustment improved recall from <strong>55% to 75%</strong>. While precision dropped, this trade-off allows the bank to capture a significantly larger portion of at-risk customers for intervention.</p>
+                    <h3>Recommendations</h3>
+                    <ul>
+                        <li><strong>Target Zero-Balance Accounts:</strong> Implement re-engagement offers for zero-balance customers in France, a high-risk segment.</li>
+                        <li><strong>Age-Based Retention:</strong> Leverage the model's finding that Age is a key predictor by creating generationally tailored retention programs.</li>
+                        <li><strong>Tiered Intervention:</strong> Use the probability scores to offer premium retention packages to high-probability churners and lighter-touch engagement for moderate risks.</li>
+                    </ul>
+                </div>
+                <figure class="project-figure">
+                    <img src="/assets/img/bank-churn/figure8_lightgbm_pr_curve.png" alt="LightGBM Precision-Recall Curve showing the trade-off between precision and recall." loading="lazy" decoding="async">
+                    <figcaption>Figure 8: LightGBM Precision-Recall Curve. Lowering the threshold prioritizes recall.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section meta-section">
+            <h2 class="subsection-title">Additional Details</h2>
+
+            <div class="meta-grid">
+                <div class="meta-block">
+                    <h3>Tech Stack</h3>
+                    <ul class="meta-list">
+                        <li><strong>Language:</strong> Python</li>
+                        <li><strong>Libraries:</strong> Pandas, NumPy, Scikit-Learn</li>
+                        <li><strong>ML Frameworks:</strong> XGBoost, LightGBM, TensorFlow/Keras</li>
+                        <li><strong>Visualization:</strong> Matplotlib, Seaborn</li>
+                    </ul>
+                </div>
+
+                <div class="meta-block">
+                    <h3>Credits</h3>
+                    <p>Dataset: <a href="https://www.kaggle.com/competitions/playground-series-s4e1" target="_blank" rel="noopener noreferrer"><strong>Bank Churn Dataset (Kaggle)</strong></a>.</p>
+                    <p>This was a collaborative team project; I contributed primarily to building the Neural Network model, aggregating and interpreting model performance, and developing the retention strategy recommendations.</p>
+                </div>
+            </div>
+        </section> 
+        <footer class="footer full-bleed">
+            <p>&copy; 2026 John He. All rights reserved.</p>
+        </footer>
+    </main>
+    <script src="/js/main.js"></script>
+</body>
+</html>
