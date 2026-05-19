@@ -1,10 +1,10 @@
-# John He | AI Engineer & Data Scientist
+# John He | Data Scientist
 
 **Contact:** (603) 667-3454 | Evanston, IL | [johnhe@u.northwestern.edu](mailto:johnhe@u.northwestern.edu)  
 **Links:** [LinkedIn](https://www.linkedin.com/in/jhe1/) | [GitHub](https://github.com/reigningforest) | [OrcId Profile](https://orcid.org/0009-0002-9787-0426) | [Portfolio](https://reigningforest.github.io)
 
 ## About Me
-I'm an AI Engineer and Data Scientist with a focus on building scalable systems combining LLM agents, RAG pipelines, and cloud-native data infrastructure. I graduated from Northwestern University's MS in Machine Learning and Data Science program (Dec 2025) and have 3+ years of experience at leading organizations including Brigham and Women's Hospital, AstraZeneca, and early-stage biotech companies.
+I'm a Data Scientist with a focus on building scalable systems combining LLM agents, RAG pipelines, and cloud-native data infrastructure. I graduated from Northwestern University's MS in Machine Learning and Data Science program (Dec 2025) and have 3+ years of experience at leading organizations including Brigham and Women's Hospital, AstraZeneca, and early-stage biotech companies.
 
 ---
 
