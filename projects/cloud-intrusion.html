@@ -7,12 +7,18 @@
     <meta name="description" content="A scalable, cloud-based Intrusion Detection System processing 2.5M+ records using AWS Glue, Redshift, and ECS Fargate. Built by John He.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
     <script> (function(){ const t = localStorage.getItem('theme') || 'dark'; document.documentElement.setAttribute('data-theme', t); })();</script>
+    <meta property="og:title" content="Cloud-Based Intrusion Detection System — John He">
+    <meta property="og:description" content="A scalable, cloud-based Intrusion Detection System processing 2.5M+ records using AWS Glue, Redshift, and ECS Fargate.">
+    <meta property="og:image" content="/assets/img/cloud-intrusion/project_aws_diagram.drawio2.png">
+    <link rel="canonical" href="https://reigningforest.github.io/projects/cloud-intrusion.html">
+    <link rel="stylesheet" href="/css/critical.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/projects.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
-    <nav class="navbar">
+    <header class="site-header">
+    <nav class="navbar" role="navigation" aria-label="Project navigation">
         <div class="nav-container">
             <div class="nav-links">
                 <a href="/#hero">Home</a>
@@ -43,7 +49,7 @@
                 <strong>TL;DR:</strong> Real-time inference on ECS Fargate; Hive-style date partitioning in S3; PySpark ETL via AWS Glue with Glue Crawlers for schema discovery.
             </div> 
             <figure class="project-figure">
-                <img src="/assets/img/cloud-intrusion/project_aws_diagram.drawio2.png" alt="AWS Cloud Architecture Diagram showing flow from S3 to Glue to Redshift to ECS Fargate." loading="eager" decoding="async">
+                <img src="/assets/img/cloud-intrusion/project_aws_diagram.drawio2.png" alt="AWS Cloud Architecture Diagram showing flow from S3 to Glue to Redshift to ECS Fargate." loading="eager" decoding="async" width="1200" height="675">
                 <figcaption>Architecture diagram: data flow from ingestion to inference.</figcaption>
             </figure>
         </header> 
@@ -64,13 +70,13 @@
             <h2 class="subsection-title">Automated Data Ingestion &amp; Transformation</h2>
             <div class="media-grid two-col">
                 <figure class="project-figure">
-                    <img src="/assets/img/cloud-intrusion/s3_storage.png" alt="Date-partitioned raw data in S3" loading="lazy" decoding="async">
+                    <img src="/assets/img/cloud-intrusion/s3_storage.png" alt="Date-partitioned raw data in S3" loading="lazy" decoding="async" width="1200" height="675">
                     <figcaption>Date-partitioned raw data in S3 (optimized for daily loads ~200MB/day).</figcaption>
                 </figure>
                 <div>
                     <p>Implemented Hive-style partitioning (date=YYYY-MM-DD) in S3 to enable partition pruning and optimize query performance for daily data loads (~200MB/day). Utilized AWS Glue Crawlers for automated schema discovery to handle data drift, while PySpark ETL scripts orchestrated by AWS Glue clean, normalize, and transform raw PCAP CSV data into a Redshift-ready schema. Jobs are idempotent, versioned, and emit structured job metrics to CloudWatch.</p>
                     <figure class="project-figure">
-                        <img src="/assets/img/cloud-intrusion/glue_job.png" alt="AWS Glue Job Console showing ETL and Model Training jobs" loading="lazy" decoding="async">
+                        <img src="/assets/img/cloud-intrusion/glue_job.png" alt="AWS Glue Job Console showing ETL and Model Training jobs" loading="lazy" decoding="async" width="1200" height="675">
                         <figcaption>AWS Glue Job Console showing ETL and model training orchestration.</figcaption>
                     </figure>
                 </div>
@@ -80,8 +86,8 @@
         <section class="section">
             <h2 class="subsection-title">Production-Grade Inference API</h2>
             <p>Modular FastAPI app with strict Pydantic validation and separation of concerns between API routes and model inference logic. Serves a Random Forest model trained on flow metadata; models are versioned and served via a lightweight container. Health checks and structured JSON responses make the API production-ready.</p>
-            <figure class="project-figure">
-                <img src="/assets/img/cloud-intrusion/fastapi_code.png" alt="FastAPI codebase showing model_infer.py and routes directory structure" loading="lazy" decoding="async">
+                <figure class="project-figure">
+                    <img src="/assets/img/cloud-intrusion/fastapi_code.png" alt="FastAPI codebase showing model_infer.py and routes directory structure" loading="lazy" decoding="async" width="1200" height="675">
                 <figcaption>FastAPI code snapshot: `model_infer.py` and routes layout.</figcaption>
             </figure>
         </section>
@@ -91,7 +97,7 @@
             <p>Challenge: Enabling secure private communication between AWS Glue and Redshift without exposing credentials or traffic to public internet.</p>
             <p>Solution: Utilized VPC Interface and Gateway Endpoints to create a private network tunnel, allowing JDBC database traffic to flow securely between services without traversing the public internet. This architecture isolates data within private subnets and enforces IAM-based role assignments to eliminate the need for hardcoded AWS access keys.</p>
             <figure class="project-figure">
-                <img src="/assets/img/cloud-intrusion/VPC.png" alt="VPC resource map visualizing subnets and route tables" loading="lazy" decoding="async">
+                <img src="/assets/img/cloud-intrusion/VPC.png" alt="VPC resource map visualizing subnets and route tables" loading="lazy" decoding="async" width="1200" height="675">
                 <figcaption>VPC resource map highlighting subnets, route tables, and private endpoints.</figcaption>
             </figure>
         </section>

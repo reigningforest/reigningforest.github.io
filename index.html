@@ -8,20 +8,33 @@
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQV60PPMYK"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-VQV60PPMYK');
-    </script>
+        <!-- Analytics will be loaded only after consent. See /js/main.js -->
+        <meta property="og:title" content="John He — AI Engineer & Data Scientist">
+        <meta property="og:description" content="AI Engineer & Data Scientist Portfolio of John He - Specializing in LLM Agents, RAG Systems, and Scalable ETL Pipelines.">
+        <meta property="og:image" content="/assets/img/logo.jpg">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:creator" content="@reigningforest">
+        <link rel="canonical" href="https://reigningforest.github.io/">
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "John He",
+            "url": "https://reigningforest.github.io/",
+            "sameAs": ["https://github.com/reigningforest","https://www.linkedin.com/in/jhe1/"],
+            "jobTitle": "AI Engineer & Data Scientist",
+            "description": "Specializing in LLM Agents, RAG Systems, and Scalable ETL Pipelines."
+        }
+        </script>
     
+    <link rel="stylesheet" href="/css/critical.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <a href="#hero" class="skip-link">Skip to content</a>
-    
-    <nav class="navbar">
+    <header class="site-header">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-links">
                 <a href="#hero">Home</a>
@@ -42,6 +55,7 @@
             </div>
         </div>
     </nav>
+    </header>
 
     <section class="hero" id="hero">
         <div class="container">
@@ -346,6 +360,6 @@
         </div>
     </footer>
 
-    <script src="/js/main.js"></script>
+    <script defer src="/js/main.js"></script>
 </body>
 </html>
